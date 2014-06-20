@@ -2,8 +2,11 @@ directory_name: "tilde"
 passengers:
 - dotfile
 - homebrew
+- rvm
 brews:
 - git
 - vim
 - tmux
 - zsh
+rubies:
+- 2.1
