@@ -1,6 +1,8 @@
 directory_name: "tilde"
+fonts_path: "fonts"
 passengers:
 - dotfile
+- fonts
 - git_repo
 - homebrew
 - rvm
@@ -14,3 +16,4 @@ rubies:
 - 2.1
 repos:
   "robbyrussell/oh-my-zsh": "~/.oh-my-zsh"
+  "chriskempson/tomorrow-theme": "~/Code/support/tomorrow-theme"
