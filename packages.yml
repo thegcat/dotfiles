@@ -1,6 +1,7 @@
 directory_name: "tilde"
 passengers:
 - dotfile
+- git_repo
 - homebrew
 - rvm
 brews:
@@ -10,3 +11,5 @@ brews:
 - zsh
 rubies:
 - 2.1
+repos:
+  "robbyrussell/oh-my-zsh": "~/.oh-my-zsh"
