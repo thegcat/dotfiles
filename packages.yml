@@ -1,4 +1,6 @@
+directory_name: "tilde"
 passengers:
+- dotfile
 - homebrew
 brews:
 - git

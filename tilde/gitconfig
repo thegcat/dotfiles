@@ -1,0 +1,9 @@
+[user]
+	name = Felix Schäfer
+	email = felix@thegcat.net
+[push]
+	default = simple
+[credential]
+	helper = osxkeychain
+[core]
+	editor = /usr/local/bin/vim
