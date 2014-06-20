@@ -1,0 +1,85 @@
+set nocompatible
+filetype off
+
+syntax on
+
+set history=500
+set ruler
+set showcmd
+set encoding=utf-8
+set nowrap
+
+" Backspace behaviour
+set backspace=eol,start,indent
+
+" Whitespace
+set tabstop=2 shiftwidth=2
+set expandtab
+set autoindent
+
+" Search
+set incsearch
+set ignorecase
+set smartcase
+
+" Line numbers
+set number relativenumber
+
+" Where am I?
+set cursorline
+set scrolloff=15
+
+" 80 columns
+set colorcolumn=80
+
+" Vundle stuff
+set rtp+=~/.vim/bundle/vundle
+call vundle#begin()
+
+" Vundle
+Plugin 'gmarik/vundle'
+
+" Fuzzy search
+Plugin 'kien/ctrlp.vim'
+
+" Theme
+Plugin 'chriskempson/vim-tomorrow-theme'
+
+call vundle#end()
+filetype plugin indent on
+
+" Theme
+colorscheme Tomorrow-Night
+
+" Set 78 char width for textfiles
+autocmd FileType text setlocal textwidth=78
+autocmd FileType plaintex setlocal textwidth=78
+autocmd FileType markdown setlocal textwidth=78
+autocmd FileType xml setlocal textwidth=78
+
+" ignore certain file types in searches
+set wildignore+=*.so,*.swp,*.zip,*.log,*.aux,*~,.DS_Store,*.pyg,*.o
+
+""From http://blog.kamil.dworakowski.name/2009/09/unobtrusive-highlighting-of-trailing.html
+" show trailing whitespace
+highlight ExtraWhitespace ctermbg=red guibg=red
+au ColorScheme * highlight ExtraWhitespace guibg=red
+au BufEnter * match ExtraWhitespace /\s\+$/
+au InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
+au InsertLeave * match ExtraWhiteSpace /\s\+$/
+
+""From http://rails-bestpractices.com/posts/60-remove-trailing-whitespace
+" Strip trailing whitespace
+function! <SID>StripTrailingWhitespaces()
+    " Preparation: save last search, and cursor position.
+    let _s=@/
+    let l = line(".")
+    let c = col(".")
+    " Do the business:
+    %s/\s\+$//e
+    " Clean up: restore previous search history, and cursor position
+    let @/=_s
+    call cursor(l, c)
+endfunction
+autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
+

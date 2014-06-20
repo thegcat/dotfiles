@@ -4,6 +4,7 @@ passengers:
 - git_repo
 - homebrew
 - rvm
+- vundle
 brews:
 - git
 - vim
