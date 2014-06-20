@@ -1,0 +1,7 @@
+passengers:
+- homebrew
+brews:
+- git
+- vim
+- tmux
+- zsh

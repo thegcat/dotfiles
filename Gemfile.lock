@@ -1,0 +1,17 @@
+GIT
+  remote: git://github.com/moonglum/exogenesis.git
+  revision: 8ab7a4a2f5a908e638cf7da92e138471000ab560
+  specs:
+    exogenesis (0.2.0)
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    rake (10.3.2)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  exogenesis!
+  rake
