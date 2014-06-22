@@ -7,3 +7,39 @@
 	helper = osxkeychain
 [core]
 	editor = /usr/local/bin/vim
+  excludesfile = /Users/felix/.gitignore_global
+[alias]
+  s = status
+  a = add -p
+  p = push
+  ci = commit
+  br = branch
+  co = checkout
+  cp = cherry-pick -e
+  df = diff
+  ds = diff --cached
+  fixup = !sh -c 'git commit -m \"fixup! $(git log -1 --format='\\''%s'\\'' $@)\"' -
+  squash = !sh -c 'git commit -m \"squash! $(git log -1 --format='\\''%s'\\'' $@)\"' -
+  re = rebase --autosquash
+  ri = rebase --interactive --autosquash
+  rc = rebase --continue
+  ra = rebase --abort
+  si = submodule init
+  su = submodule update
+  ss = submodule sync
+  fp = puch --force
+  unstage = reset HEAD
+  uncommit = reset --soft HEAD^
+  stash = stash -u
+  tree = log --graph --pretty=onelineverbose --abbrev-commit
+[pull]
+  rebase = true
+[pretty]
+  onelineverbose = "%C(yellow)%h%Creset (%Cblue%aN%Creset)%Cred%d%Creset %s [%Cgreen%cd, %ad%Creset]"
+[color "diff"]
+  meta = yellow bold
+  whitespace = red reverse
+[color "status"]
+  added = yellow
+  changed = green
+  untracked = cyan
