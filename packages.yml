@@ -6,6 +6,7 @@ passengers:
 - git_repo
 - python
 - homebrew
+- homebrew_cask
 - rvm
 - vundle
 brews:
@@ -24,3 +25,33 @@ repos:
   "chriskempson/tomorrow-theme": "~/Code/support/tomorrow-theme"
 pips:
 - "git+git://github.com/Lokaltog/powerline"
+casks:
+- adium
+- automatic
+- bartender
+- chromium
+- controlplane
+- cyberduck
+- dropbox
+- eyetv
+- firefox
+- fluid
+- gpgtools
+- ios7-screensaver
+- little-snitch
+- mactex
+- onepassword
+- onyx
+- paparazzi
+- satellite-eyes
+- secrets
+- sequel-pro
+- sizeup
+- skype
+- spotifree
+- spotify
+- transmission
+- tower
+- vagrant
+- vlc
+- vmware-fusion
