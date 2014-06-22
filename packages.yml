@@ -4,6 +4,7 @@ passengers:
 - dotfile
 - fonts
 - git_repo
+- python
 - homebrew
 - rvm
 - vundle
@@ -21,3 +22,5 @@ rubies:
 repos:
   "robbyrussell/oh-my-zsh": "~/.oh-my-zsh"
   "chriskempson/tomorrow-theme": "~/Code/support/tomorrow-theme"
+pips:
+- "git+git://github.com/Lokaltog/powerline"
