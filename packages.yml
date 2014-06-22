@@ -8,7 +8,11 @@ passengers:
 - rvm
 - vundle
 brews:
+- ack
 - git
+- htop-osx
+- imagemagick
+- mysql
 - vim
 - tmux
 - zsh
