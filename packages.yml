@@ -22,6 +22,7 @@ rubies:
 - 2.1
 repos:
   "robbyrussell/oh-my-zsh": "~/.oh-my-zsh"
+  "thegcat/chpwd_profiles": "~/.oh-my-zsh/custom/plugins/chpwd_profiles"
   "chriskempson/tomorrow-theme": "~/Code/support/tomorrow-theme"
 pips:
 - "git+git://github.com/Lokaltog/powerline"

@@ -16,7 +16,7 @@ COMPLETION_WAITING_DOTS="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(brew brew-cask bundler gem git knife osx rails sudo tmux)
+plugins=(brew brew-cask bundler chpwd_profiles gem git knife osx rails sudo tmux)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -24,3 +24,23 @@ source $ZSH/oh-my-zsh.sh
 
 export PATH="/usr/local/bin:$PATH" # Add hombrew
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM
+
+zstyle ':chpwd:profiles:*' re-execute false
+zstyle ":chpwd:profiles:$HOME/Code/planio(|/|/*)" profile planio
+chpwd_profiles
+
+chpwd_profile_planio()
+{
+  print "Switching to profile: $profile"
+
+  export GIT_AUTOR_EMAIL='felix@plan.io'
+  export GIT_COMMITTER_EMAIL='felix@plan.io'
+}
+
+chpwd_leave_profile_planio()
+{
+  print "Leaving profile: $CHPWD_PROFILE"
+
+  unset GIT_AUTOR_EMAIL
+  unset GIT_COMMITTER_EMAIL
+}
