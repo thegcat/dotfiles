@@ -24,10 +24,11 @@
   ri = rebase --interactive --autosquash
   rc = rebase --continue
   ra = rebase --abort
+  sa = submodule add
   si = submodule init
   su = submodule update
   ss = submodule sync
-  fp = puch --force
+  fp = push --force
   unstage = reset HEAD
   uncommit = reset --soft HEAD^
   stash = stash -u
@@ -43,3 +44,5 @@
   added = yellow
   changed = green
   untracked = cyan
+[help]
+  autocorrect = 5
