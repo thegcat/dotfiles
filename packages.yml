@@ -15,11 +15,13 @@ brews:
 - htop-osx
 - imagemagick
 - mysql
+- postgres
 - vim
 - tmux
 - zsh
 rubies:
 - 2.1
+- 2.2
 repos:
   "robbyrussell/oh-my-zsh": "~/.oh-my-zsh"
   "thegcat/chpwd_profiles": "~/.oh-my-zsh/custom/plugins/chpwd_profiles"
@@ -54,5 +56,6 @@ casks:
 - transmission
 - tower
 - vagrant
+- virtualbox
 - vlc
 - vmware-fusion
