@@ -1,13 +1,17 @@
 GIT
   remote: git://github.com/moonglum/exogenesis.git
-  revision: 3fae9e7ea0fae22a3bff911ce9c5dc3081f9a1e2
+  revision: 39e6e178ef6d9a62af2c4f382b7ad75107b6d529
   specs:
     exogenesis (0.2.0)
+      megingiard (~> 0.1.0)
 
 GEM
   remote: https://rubygems.org/
   specs:
+    megingiard (0.1.0)
+      utf8_emoji (~> 0.1.0)
     rake (10.3.2)
+    utf8_emoji (0.1.0)
 
 PLATFORMS
   ruby
