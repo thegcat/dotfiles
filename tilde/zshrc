@@ -13,6 +13,9 @@ DISABLE_CORRECTION="true"
 # Uncomment the following line to display red dots whilst waiting for completion.
 COMPLETION_WAITING_DOTS="true"
 
+# Automatically start tmux
+ZSH_TMUX_AUTOSTART="true"
+
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
@@ -22,25 +25,40 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
+unsetopt auto_name_dirs
+
 export PATH="/usr/local/bin:$PATH" # Add hombrew
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM
 
 zstyle ':chpwd:profiles:*' re-execute false
 zstyle ":chpwd:profiles:$HOME/Code/planio(|/|/*)" profile planio
-chpwd_profiles
 
 chpwd_profile_planio()
 {
   print "Switching to profile: $profile"
 
-  export GIT_AUTOR_EMAIL='felix@plan.io'
+  export GIT_AUTHOR_EMAIL='felix@plan.io'
   export GIT_COMMITTER_EMAIL='felix@plan.io'
+  export PLANIO_SKIP_AMA=1
 }
 
 chpwd_leave_profile_planio()
 {
   print "Leaving profile: $CHPWD_PROFILE"
 
-  unset GIT_AUTOR_EMAIL
+  unset GIT_AUTHOR_EMAIL
   unset GIT_COMMITTER_EMAIL
+  unset PLANIO_SKIP_AMA
 }
+
+chpwd_profiles
+
+alias e=vim
+alias r=rails
+alias rs="rails server"
+alias rc="rails console"
+
+alias tac=gtac
+
+PERL_MB_OPT="--install_base \"/Users/felix/perl5\""; export PERL_MB_OPT;
+PERL_MM_OPT="INSTALL_BASE=/Users/felix/perl5"; export PERL_MM_OPT;
