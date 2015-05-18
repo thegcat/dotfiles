@@ -29,7 +29,9 @@ repos:
 pips:
 - "git+git://github.com/Lokaltog/powerline"
 casks:
+- 1password
 - adium
+- air-video-server-hd
 - automatic
 - bartender
 - chromium
@@ -39,23 +41,28 @@ casks:
 - eyetv
 - firefox
 - fluid
+- google-chrome
 - gpgtools
+- heroku-toolbelt
 - ios7-screensaver
+- keepingyouawake
 - little-snitch
 - mactex
-- onepassword
 - onyx
 - paparazzi
+- rowmote-helper
 - satellite-eyes
 - secrets
 - sequel-pro
 - sizeup
 - skype
-- spotifree
+- sparkleshare
 - spotify
-- transmission
+- textmate
 - tower
+- transmission
 - vagrant
 - virtualbox
 - vlc
 - vmware-fusion
+- ynab
