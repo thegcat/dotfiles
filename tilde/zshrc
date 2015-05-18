@@ -21,14 +21,20 @@ ZSH_TMUX_AUTOSTART="true"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(brew brew-cask bundler chpwd_profiles gem git knife osx rails sudo tmux)
 
+export PATH="/usr/local/bin:$PATH" # Add hombrew
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM
+export PATH="$HOME/Library/Python/2.7/bin:$PATH"
+
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
 unsetopt auto_name_dirs
 
-export PATH="/usr/local/bin:$PATH" # Add hombrew
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM
+tmux source '/Users/felix/Library/Python/2.7/lib/python/site-packages/powerline/bindings/tmux/powerline.conf'
 
 zstyle ':chpwd:profiles:*' re-execute false
 zstyle ":chpwd:profiles:$HOME/Code/planio(|/|/*)" profile planio
