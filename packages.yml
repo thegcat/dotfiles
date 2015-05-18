@@ -16,8 +16,10 @@ brews:
 - imagemagick
 - mysql
 - postgres
-- vim
+- reattach-to-user-namespace
 - tmux
+- vim
+- youtube-dl
 - zsh
 rubies:
 - 2.1
