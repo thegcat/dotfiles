@@ -119,8 +119,8 @@ defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
 # Wipe all (default) app icons from the Dock
 defaults write com.apple.dock persistent-apps -array
 
-# Setting the icon size of Dock items to 36 pixels for optimal size/screen-realestate"
-defaults write com.apple.dock tilesize -int 36
+# Setting the icon size of Dock
+defaults write com.apple.dock tilesize -int 42
 
 # Make Dock icons of hidden applications translucent
 defaults write com.apple.dock showhidden -bool true
@@ -131,8 +131,8 @@ defaults write com.apple.dock "expose-group-by-app" -bool true
 
 # Set Dock to auto-hide and remove the auto-hiding delay?
 defaults write com.apple.dock autohide -bool true
-defaults write com.apple.dock autohide-delay -float 0
-defaults write com.apple.dock autohide-time-modifier -float 0
+defaults write com.apple.dock autohide-delay -float 0.5
+defaults write com.apple.dock autohide-time-modifier -float 0.5
 
 
 ###############################################################################
