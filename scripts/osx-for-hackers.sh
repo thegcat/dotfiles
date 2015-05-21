@@ -14,9 +14,6 @@ sudo scutil --set HostName bass
 sudo scutil --set LocalHostName bass
 sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string bass
 
-# Hide Spotlight icon
-sudo chmod 600 /System/Library/CoreServices/Search.bundle/Contents/MacOS/Search
-
 # Disable indexing mounted volumes
 sudo defaults write /.Spotlight-V100/VolumeConfiguration Exclusions -array "/Volumes"
 # Load new settings before rebuilding the index
