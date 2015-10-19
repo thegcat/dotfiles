@@ -7,7 +7,7 @@
 	helper = osxkeychain
 [core]
 	editor = /usr/local/bin/vim
-  excludesfile = /Users/felix/.gitignore_global
+  excludesfile = /Users/thegcat/.gitignore_global
 [alias]
   s = status
   a = add -p
