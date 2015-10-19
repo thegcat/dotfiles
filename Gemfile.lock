@@ -1,6 +1,5 @@
-GIT
-  remote: git://github.com/moonglum/exogenesis.git
-  revision: 39e6e178ef6d9a62af2c4f382b7ad75107b6d529
+PATH
+  remote: ../exogenesis
   specs:
     exogenesis (0.2.0)
       megingiard (~> 0.1.0)
