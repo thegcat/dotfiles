@@ -46,6 +46,7 @@ casks:
 - google-chrome
 - gpgtools
 - heroku-toolbelt
+- iterm2
 - ios7-screensaver
 - keepingyouawake
 - little-snitch
@@ -61,8 +62,10 @@ casks:
 - sparkleshare
 - spotify
 - textmate
+- the-unarchiver
 - tower
 - transmission
+- tunnelblick
 - vagrant
 - virtualbox
 - vlc
