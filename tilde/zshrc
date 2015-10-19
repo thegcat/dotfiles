@@ -34,7 +34,7 @@ source $ZSH/oh-my-zsh.sh
 
 unsetopt auto_name_dirs
 
-tmux source '/Users/felix/Library/Python/2.7/lib/python/site-packages/powerline/bindings/tmux/powerline.conf'
+tmux source "$HOME/Library/Python/2.7/lib/python/site-packages/powerline/bindings/tmux/powerline.conf"
 
 zstyle ':chpwd:profiles:*' re-execute false
 zstyle ":chpwd:profiles:$HOME/Code/planio(|/|/*)" profile planio
