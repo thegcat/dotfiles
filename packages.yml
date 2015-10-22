@@ -49,8 +49,9 @@ casks:
 - gpgtools
 - heroku-toolbelt
 - iterm2
-- ios7-screensaver
+- ios-saver
 - keepingyouawake
+- libreoffice
 - little-snitch
 - mactex
 - onyx
