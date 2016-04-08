@@ -15,7 +15,7 @@ brews:
 - git
 - htop-osx
 - imagemagick
-- mysql
+- mysql56
 - postgres
 - reattach-to-user-namespace
 - tmux
