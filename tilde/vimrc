@@ -42,6 +42,9 @@ set winminheight=5
 nnoremap <silent> + :exe "resize " . (winheight(0) * 3/2)<CR>
 nnoremap <silent> - :exe "resize " . (winheight(0) * 2/3)<CR>
 
+" copy to/from system clipboard
+set clipboard+=unnamed
+
 " Vundle stuff
 set rtp+=~/.vim/bundle/vundle
 call vundle#begin()
