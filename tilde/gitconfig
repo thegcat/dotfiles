@@ -3,6 +3,7 @@
 	email = felix@thegcat.net
 [push]
 	default = simple
+	recurseSubmodules = check
 [credential]
 	helper = osxkeychain
 [core]
