@@ -23,8 +23,6 @@ brews:
 - youtube-dl
 - zsh
 rubies:
-- 1.9
-- 2.0
 - 2.2
 repos:
   "robbyrussell/oh-my-zsh": "~/.oh-my-zsh"
