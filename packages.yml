@@ -11,6 +11,7 @@ passengers:
 brews:
 - ack
 - git
+- heroku
 - htop-osx
 - imagemagick
 - mysql56
@@ -45,7 +46,6 @@ casks:
 - font-inconsolata-dz-for-powerline
 - google-chrome
 - gpgtools
-- heroku-toolbelt
 - iterm2
 - ios-saver
 - keepingyouawake
