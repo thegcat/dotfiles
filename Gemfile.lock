@@ -1,7 +1,7 @@
 PATH
   remote: ../exogenesis
   specs:
-    exogenesis (0.2.0)
+    exogenesis (1.0.0)
       megingiard (~> 0.1.0)
 
 GEM
@@ -9,7 +9,7 @@ GEM
   specs:
     megingiard (0.1.0)
       utf8_emoji (~> 0.1.0)
-    rake (10.3.2)
+    rake (11.2.2)
     utf8_emoji (0.1.0)
 
 PLATFORMS
@@ -18,3 +18,6 @@ PLATFORMS
 DEPENDENCIES
   exogenesis!
   rake
+
+BUNDLED WITH
+   1.11.2
