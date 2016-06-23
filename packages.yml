@@ -76,5 +76,5 @@ casks:
 - vmware-fusion
 - ynab
 commands:
-- open "/Users/felix/Code/support/tomorrow-theme/OS X Terminal/Tomorrow Night.terminal"
+- "sh ./scripts/osx-for-hackers.sh"
 - "chsh -s /bin/zsh"

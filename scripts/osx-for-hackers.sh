@@ -9,7 +9,7 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 ###############################################################################
 
 # Set computer name
-sudo scutil --set ComputerName 𝄢
+sudo scutil --set ComputerName bass
 sudo scutil --set HostName bass
 sudo scutil --set LocalHostName bass
 sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string bass
@@ -46,13 +46,19 @@ defaults write com.apple.SoftwareUpdate ScheduleFrequency -int 1
 # Set Help Viewer windows to non-floating mode
 defaults write com.apple.helpviewer DevMode -bool true
 
+# Disable window animations ("new window" scale effect)
+defaults write NSGlobalDomain NSAutomaticWindowAnimationsEnabled -bool false
+
+# Dark theme
+defaults write NSGlobalDomain AppleInterfaceTheme -string Dark
+
 
 ###############################################################################
 # General Power and Performance modifications
 ###############################################################################
 
 # Disable the menubar transparency? (y/n)
-defaults write com.apple.universalaccess reduceTransparency -bool true
+#defaults write com.apple.universalaccess reduceTransparency -bool true
 
 # Speeding up wake from sleep to 24 hours from an hour
 # http://www.cultofmac.com/221392/quick-hack-speeds-up-retina-macbooks-wake-from-sleep-os-x-tips/
@@ -71,6 +77,9 @@ defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
 
 # Disabling press-and-hold for special keys in favor of key repeat
 defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
+
+# Set a shorter Delay until key repeat
+defaults write NSGlobalDomain InitialKeyRepeat -int 12
 
 # Setting a blazingly fast keyboard repeat rate
 defaults write NSGlobalDomain KeyRepeat -int 0
@@ -111,6 +120,12 @@ defaults write com.apple.finder FXPreferredViewStyle Nlsv
 # Avoid creation of .DS_Store files on network volumes
 defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
 
+# Don't show anything on the Desktop
+defaults write com.apple.finder CreateDesktop -bool false
+
+# Enable AirDrop over Ethernet and on unsupported Macs
+defaults write com.apple.NetworkBrowser BrowseAllInterfaces -bool true
+
 
 ###############################################################################
 # Dock & Mission Control
@@ -131,7 +146,7 @@ defaults write com.apple.dock "expose-group-by-app" -bool true
 
 # Set Dock to auto-hide and remove the auto-hiding delay?
 defaults write com.apple.dock autohide -bool true
-defaults write com.apple.dock autohide-delay -float 0.5
+defaults write com.apple.dock autohide-delay -float 0
 defaults write com.apple.dock autohide-time-modifier -float 0.5
 
 
