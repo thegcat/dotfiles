@@ -67,6 +67,12 @@ Plugin 'sickill/vim-pasta'
 " syntastic
 Plugin 'scrooloose/syntastic'
 
+" project-wide search
+Plugin 'mileszs/ack.vim'
+
+" Add comments
+Plugin 'tpope/vim-commentary'
+
 call vundle#end()
 filetype plugin indent on
 
@@ -125,6 +131,11 @@ au InsertLeave * match ExtraWhiteSpace /\s\+$/
 ""From http://rails-bestpractices.com/posts/60-remove-trailing-whitespace
 " Strip trailing whitespace
 function! <SID>StripTrailingWhitespaces()
+    " http://stackoverflow.com/a/6496995
+    " Only strip if the b:noStripTrailingWhitespaces variable isn't set
+    if exists('b:noStripTrailingWhitespaces')
+        return
+    endif
     " Preparation: save last search, and cursor position.
     let _s=@/
     let l = line(".")
