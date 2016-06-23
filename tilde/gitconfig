@@ -24,6 +24,8 @@
   re = rebase --autosquash
   ri = rebase --interactive --autosquash
   rc = rebase --continue
+  rcs = "!git rc; git s"
+  oa = !sh -c 'git conflicts | xargs -I '\\''{}'\\'' sh -c '\\''git checkout --ours {} && git add {}'\\'''
   ra = rebase --abort
   sa = submodule add
   si = submodule init
@@ -31,9 +33,11 @@
   ss = submodule sync
   fp = push --force
   unstage = reset HEAD
+  us = reset HEAD
   uncommit = reset --soft HEAD^
   stash = stash -u
   tree = log --graph --pretty=onelineverbose --abbrev-commit
+  conflicts = diff --name-only --diff-filter=U
 [pull]
   rebase = true
 [pretty]
@@ -53,3 +57,5 @@
   fsckobjects = true
 [receive]
   fsckobjects = true
+[diff]
+	compactionHeuristic = true
