@@ -1,1 +1,3 @@
-tilde/config/sparkleshare
+tilde/config/
+!tilde/config/powerline
+!tilde/config/lftp
