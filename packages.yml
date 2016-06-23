@@ -1,8 +1,6 @@
 directory_name: "tilde"
-fonts_path: "fonts"
 passengers:
 - dotfile
-- fonts
 - git_repo
 - python
 - homebrew
@@ -43,6 +41,8 @@ casks:
 - eyetv
 - firefox
 - fluid
+- font-hack
+- font-inconsolata-dz-for-powerline
 - google-chrome
 - gpgtools
 - heroku-toolbelt
