@@ -223,6 +223,16 @@ defaults write org.m0k.transmission WarningLegal -bool false
 
 
 ###############################################################################
+# Keyboard                                                                    #
+###############################################################################
+
+# Change the caps lock key to escape
+# CAUTION the caps lock key needs to be changed to no action in the Preferences
+/Applications/Seil.app/Contents/Library/bin/seil set enable_capslock 1
+/Applications/Seil.app/Contents/Library/bin/seil set keycode_capslock 53
+
+
+###############################################################################
 # Kill affected applications
 ###############################################################################
 
