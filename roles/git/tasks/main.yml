@@ -11,7 +11,7 @@
     - { key: user.email, value: felix@thegcat.net }
     - { key: credential.helper, value: osxkeychain } # use macOS keychain to store credentials
     - { key: core.editor, value: /usr/local/bin/vim } # use 3rd-party vim as editor
-    - { key: core.excludesfile, value: ~/.gitignore_global } # global git ignore
+    - { key: core.excludesfile, value: /Users/thegcat/.gitignore_global } # global git ignore
     - { key: push.recurseSubmodules, value: check }
     - { key: merge.ff, value: only }
     - { key: alias.s, value: status }
