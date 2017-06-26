@@ -1,0 +1,44 @@
+- name: Install iTerm2
+  homebrew_cask: name=iterm2
+
+- name: Get Tomorrow themes
+  git:
+    repo: https://github.com/chriskempson/tomorrow-theme.git
+    dest: ~/Code/thegcat/tomorrow-theme
+    depth: 1
+  register: tomorrow_git
+
+- name: Install iTerm2 Tomorrow Night theme
+  command: open '~/Code/thegcat/tomorrow-theme/iTerm2/Tomorrow Night.itermcolors'
+  when: tomorrow_git.changed
+
+- name: Install tmux
+  homebrew: name={{ item }}
+  with_items:
+    - tmux
+    - reattach-to-user-namespace
+
+- name: Install Python
+  homebrew: name=python
+
+- name: Install Powerline
+  pip: name=powerline-status
+
+- name: Install tpm
+  git:
+    repo: https://github.com/tmux-plugins/tpm
+    dest: ~/.tmux/plugins/tpm
+    depth: 1
+
+- name: Make sure needed directories are present
+  file:
+    path: ~/.config/powerline/themes/tmux
+    state: directory
+
+- name: Configure tmux with powerline and fish and tpm
+  copy:
+    src: "{{ item.src }}"
+    dest: "{{ item.dest }}"
+  with_items:
+    - { src: tmux.conf, dest: ~/.tmux.conf }
+    - { src: powerline_themes_tmux_default.json, dest: ~/.config/powerline/themes/tmux/default.json }

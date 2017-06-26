@@ -1,0 +1,12 @@
+{
+   "segments" : {
+      "right" : [
+         {
+            "args" : {
+               "exclude_domain" : true
+            },
+            "function" : "powerline.segments.common.net.hostname"
+         }
+      ]
+   }
+}
