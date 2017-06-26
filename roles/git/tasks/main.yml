@@ -1,0 +1,53 @@
+- name: Install git
+  homebrew: name=git
+
+- name: Configure git
+  git_config:
+    name: "{{ item.key }}"
+    value: "{{ item.value }}"
+    scope: global
+  with_items:
+    - { key: user.name, value: Felix Schäfer }
+    - { key: user.email, value: felix@thegcat.net }
+    - { key: credential.helper, value: osxkeychain } # use macOS keychain to store credentials
+    - { key: core.editor, value: /usr/local/bin/vim } # use 3rd-party vim as editor
+    - { key: core.excludesfile, value: ~/.gitignore_global } # global git ignore
+    - { key: push.recurseSubmodules, value: check }
+    - { key: merge.ff, value: only }
+    - { key: alias.s, value: status }
+    - { key: alias.a, value: add -p }
+    - { key: alias.p, value: push }
+    - { key: alias.ci, value: commit }
+    - { key: alias.br, value: branch }
+    - { key: alias.co, value: checkout }
+    - { key: alias.cp, value: cherry-pick -e }
+    - { key: alias.df, value: diff }
+    - { key: alias.ds, value: diff --cached }
+    - { key: alias.re, value: rebase --autosquash }
+    - { key: alias.ri, value: rebase --interactive --autosquash }
+    - { key: alias.rc, value: rebase --continue }
+    - { key: alias.ra, value: rebase --abort }
+    - { key: alias.rcs, value: '!git rc; git s' }
+    - { key: alias.sa, value: submodule add }
+    - { key: alias.si, value: submodule init }
+    - { key: alias.su, value: submodule update }
+    - { key: alias.ss, value: submodule sync }
+    - { key: alias.fp, value: push --force }
+    - { key: alias.us, value: reset HEAD }
+    - { key: alias.uc, value: reset --soft HEAD^ }
+    - { key: alias.tree, value: log --graph --pretty=onelineverbose --abbrev-commit }
+    - { key: alias.stash, value: stash -u }
+    - { key: alias.rv, value: remote --verbose }
+    - { key: pretty.onelineverbose, value: '%C(yellow)%h%Creset (%Cblue%aN%Creset)%Cred%d%Creset %s [%Cgreen%cd, %ad%Creset]' }
+    - { key: pull.rebase, value: true }
+    - { key: diff.compactionHeuristic, value: true }
+    - { key: color.diff.meta, value: yellow bold }
+    - { key: color.diff.whitespace, value: red reverse }
+    - { key: color.status.added, value: yellow }
+    - { key: color.status.changed, value: green }
+    - { key: color.status.untracked, value: cyan }
+
+- name: Install global gitignore
+  copy:
+    src: gitignore_global
+    dest: ~/.gitignore_global
