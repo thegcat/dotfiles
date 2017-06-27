@@ -3,14 +3,17 @@
 
 - name: Get Tomorrow themes
   git:
-    repo: https://github.com/chriskempson/tomorrow-theme.git
-    dest: ~/Code/thegcat/tomorrow-theme
+    repo: https://github.com/{{ item.repo }}.git
+    dest: "{{ item.dest }}"
     depth: 1
   register: tomorrow_git
+  with_items:
+    - { repo: chriskempson/base16-iterm2, dest: ~/Code/thegcat/base16-iterm2 }
+    - { repo: chriskempson/base16-shell, dest: ~/.config/base16-shell }
 
 - name: Install iTerm2 Tomorrow Night theme
-  command: open '~/Code/thegcat/tomorrow-theme/iTerm2/Tomorrow Night.itermcolors'
-  when: tomorrow_git.changed
+  command: open '~/Code/thegcat/base16-iterm2/base16-tomorrownight.dark.itermcolors'
+  when: tomorrow_git.results[0].changed
 
 - name: Install tmux
   homebrew: name={{ item }}
