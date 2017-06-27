@@ -13,8 +13,9 @@
     - { key: core.editor, value: /usr/local/bin/vim } # use 3rd-party vim as editor
     - { key: core.excludesfile, value: /Users/thegcat/.gitignore_global } # global git ignore
     - { key: push.recurseSubmodules, value: check }
+    - { key: push.default, value: current }
     - { key: merge.ff, value: only }
-    - { key: alias.s, value: status }
+    - { key: alias.s, value: status -sb }
     - { key: alias.a, value: add -p }
     - { key: alias.p, value: push }
     - { key: alias.ci, value: commit }
@@ -41,7 +42,17 @@
     - { key: pretty.onelineverbose, value: '%C(yellow)%h%Creset (%Cblue%aN%Creset)%Cred%d%Creset %s [%Cgreen%cd, %ad%Creset]' }
     - { key: pull.rebase, value: true }
     - { key: diff.compactionHeuristic, value: true }
+    - { key: core.whitespace, value: -indent-with-non-tab,trailing-space,cr-at-eol }
+    - { key: apply.whitespace, value: fix }
+    - { key: branch.autosetuprebase, value: always }
+    - { key: color.ui, value: auto }
+    - { key: color.branch.current, value: yellow reverse }
+    - { key: color.branch.local, value: yellow }
+    - { key: color.branch.remote, value: green }
     - { key: color.diff.meta, value: yellow bold }
+    - { key: color.diff.frag, value: magenta bold }
+    - { key: color.diff.old, value: red bold }
+    - { key: color.diff.new, value: green bold }
     - { key: color.diff.whitespace, value: red reverse }
     - { key: color.status.added, value: yellow }
     - { key: color.status.changed, value: green }
