@@ -23,3 +23,6 @@
     - { repo: farmergreg/vim-lastplace, dest: vim-lastplace }
     - { repo: sickill/vim-pasta, dest: vim-pasta }
     - { repo: mileszs/ack.vim, dest: ack.vim }
+    - { repo: christoomey/vim-tmux-navigator, dest: vim-tmux-navigator }
+    - { repo: tpope/vim-fugitive, dest: tpope/vim-fugitive }
+    - { repo: tmux-plugins/vim-tmux-focus-events, dest: vim-tmux-focus-events }
