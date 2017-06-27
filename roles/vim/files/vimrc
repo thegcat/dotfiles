@@ -1,0 +1,81 @@
+runtime bundle/vim-pathogen/autoload/pathogen.vim
+execute pathogen#infect()
+
+" Use syntax-highlighting
+syntax on
+
+" Do smart stuff based on filetype
+filetype plugin indent on
+
+" Show command being executed
+set showcmd
+
+" Don't wrap lines
+set nowrap
+
+" Line numbers
+set number relativenumber
+
+" Whitespace
+set tabstop=2 shiftwidth=2 expandtab
+
+" Search
+set ignorecase
+set smartcase
+
+" Where am I?
+set cursorline
+
+" 80 columns
+set colorcolumn=80
+
+" See http://flaviusim.com/blog/resizing-vim-window-splits-like-a-boss/ for
+" more information about the next 2 sections
+" Windows with at least 5 lines, active Window with 30 lines
+set winheight=30
+set winminheight=5
+
+" Resize windows by more useful amounts
+nnoremap <silent> + :exe "resize " . (winheight(0) * 3/2)<CR>
+nnoremap <silent> - :exe "resize " . (winheight(0) * 2/3)<CR>
+
+" Powerline
+python from powerline.vim import setup as powerline_setup
+python powerline_setup()
+python del powerline_setup
+" Let powerline do mode-showing things
+set noshowmode
+
+" Theme
+colorscheme base16-tomorrow-night
+
+" Copy to/from the system clipboard
+set clipboard+=unnamed
+
+" Remove trailing whitespace on save
+autocmd BufEnter * EnableStripWhitespaceOnSave
+
+" CtrlP
+let g:ctrlp_clear_cache_on_exit = 0
+let g:ctrlp_follow_symlinks = 1
+let g:ctrlp_custom_ignore = {
+  \ 'dir': '\.git$\|\.hg$\|\.svn$',
+  \ 'file': '\.git$',
+  \ }
+
+" syntastic
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_tex_checkers = ['chktex']
+
+" Set 78 char width for textfiles
+autocmd FileType text setlocal textwidth=78
+autocmd FileType plaintex setlocal textwidth=78
+autocmd FileType markdown setlocal textwidth=78
+autocmd FileType xml setlocal textwidth=78
+
+" ignore certain file types in searches
+set wildignore+=*.so,*.swp,*.zip,*.log,*.aux,*~,.DS_Store,*.pyg,*.o
+

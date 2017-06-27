@@ -1,0 +1,25 @@
+- name: Install vim with homebrew
+  homebrew: name=vim state=latest
+
+- name: Configure vim
+  copy:
+    src: vimrc
+    dest: ~/.vimrc
+
+- name: Install some vim plugins
+  git:
+    repo: https://github.com/{{ item.repo }}.git
+    dest: ~/.vim/bundle/{{ item.dest }}
+    depth: 1
+  with_items:
+    - { repo: tpope/vim-pathogen, dest: vim-pathogen }
+    - { repo: tpope/vim-sensible, dest: vim-sensible }
+    - { repo: vim-syntastic/syntastic, dest: syntastic }
+    - { repo: ctrlpvim/ctrlp.vim, dest: ctrlp.vim }
+    - { repo: chriskempson/base16-vim, dest: base16-vim }
+    - { repo: ntpeters/vim-better-whitespace, dest: vim-better-whitespace }
+    - { repo: mhinz/vim-signify, dest: vim-signify }
+    - { repo: tpope/vim-commentary, dest: vim-commentary }
+    - { repo: farmergreg/vim-lastplace, dest: vim-lastplace }
+    - { repo: sickill/vim-pasta, dest: vim-pasta }
+    - { repo: mileszs/ack.vim, dest: ack.vim }
