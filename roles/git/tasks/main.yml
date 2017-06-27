@@ -42,7 +42,7 @@
     - { key: pretty.onelineverbose, value: '%C(yellow)%h%Creset (%Cblue%aN%Creset)%Cred%d%Creset %s [%Cgreen%cd, %ad%Creset]' }
     - { key: pull.rebase, value: true }
     - { key: diff.compactionHeuristic, value: true }
-    - { key: core.whitespace, value: -indent-with-non-tab,trailing-space,cr-at-eol }
+    - { key: core.whitespace, value: "-indent-with-non-tab,trailing-space,cr-at-eol" }
     - { key: apply.whitespace, value: fix }
     - { key: branch.autosetuprebase, value: always }
     - { key: color.ui, value: auto }
