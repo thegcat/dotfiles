@@ -47,6 +47,7 @@ python del powerline_setup
 set noshowmode
 
 " Theme
+let base16colorspace=256
 colorscheme base16-tomorrow-night
 
 " Copy to/from the system clipboard
