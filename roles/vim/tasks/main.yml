@@ -26,3 +26,4 @@
     - { repo: christoomey/vim-tmux-navigator, dest: vim-tmux-navigator }
     - { repo: tpope/vim-fugitive, dest: vim-fugitive }
     - { repo: tmux-plugins/vim-tmux-focus-events, dest: vim-tmux-focus-events }
+    - { repo: luochen1990/rainbow, dest: rainbow, foo: { } }
