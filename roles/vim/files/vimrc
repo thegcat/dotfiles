@@ -23,8 +23,9 @@ set tabstop=2 shiftwidth=2 expandtab
 set ignorecase
 set smartcase
 
-" Where am I?
-set cursorline
+" Where am I? (show only on current window not in insert mode)
+autocmd InsertLeave,WinEnter * set cursorline
+autocmd InsertEnter,WinLeave * set nocursorline
 
 " 80 columns
 set colorcolumn=80
