@@ -58,7 +58,7 @@
     - { domain: NSGlobalDomain, key: NSNavPanelExpandedStateForSaveMode2, type: boolean, value: true } # show extended save panel
     - { domain: NSGlobalDomain, key: NSDocumentSaveNewDocumentsToCloud, type: boolean, value: false } # save to local disk by default
     - { domain: com.apple.finder, key: NewWindowTarget, type: string, value: PfHm } # show home folder in new Finder windows
-    - { domain: com.apple.finder, key: NewWindowTargetPath, type: string, value: 'file://${HOME}' } # show home folder in new Finder windows
+    - { domain: com.apple.finder, key: NewWindowTargetPath, type: string, value: 'file:///Users/thegcat' } # show home folder in new Finder windows
     - { domain: com.apple.desktopservices, key: DSDontWriteNetworkStores, type: boolean, value: true } # don't create .DS_Store on network volumes
     - { domain: com.apple.desktopservices, key: DSDontWriteUSBStores, type: boolean, value: true } # don't create .DS_Store on USB volumes
     - { domain: com.apple.mail, key: AddressesIncludeNameOnPasteboard, type: boolean, value: false } # don't include name with addresses copied from Mail
@@ -68,7 +68,7 @@
     - { domain: com.tapbots.TweetbotMac, key: OpenURLsDirectly, type: boolean, value: true } # bypass t.co
     - { domain: com.apple.ImageCapture, key: disableHotPlug, type: boolean, value: true } # don't open ImageCapture when camera plugged in
     - { domain: NSGlobalDomain, key: AppleFontSmoothing, type: integer, value: 2 } # enable subpixel font rendering on non-Apple LCDs
-    - { domain: com.apple.screencapture, key: location, type: string, value: '${HOME}/Downloads' } # change screenshots to be saved to ~/Downloads
+    - { domain: com.apple.screencapture, key: location, type: string, value: '/Users/thegcat/Downloads' } # change screenshots to be saved to ~/Downloads
     - { domain: com.apple.print.PrintingPrefs, key: 'Quit When Finished', type: boolean, value: true } # quit printer app once jobs are complete
     - { domain: com.apple.SoftwareUpdate, key: ScheduleFrequency, type: integer, value: 1 } # check for Mac App Store updates daily
 
