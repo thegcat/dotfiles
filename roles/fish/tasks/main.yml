@@ -1,0 +1,13 @@
+- name: Install fish with homebrew
+  homebrew: name=fish state=latest
+
+- name: Get Oh-My-Fish
+  git:
+    repo: https://github.com/oh-my-fish/oh-my-fish
+    dest: ~/Code/thegcat/oh-my-fish
+    depth: 1
+  register: omf_git
+
+- name: Install Oh-My-Fish
+  command: ~/Code/thegcat/oh-my-fish/bin/install --offline
+  when: omf_git.changed
