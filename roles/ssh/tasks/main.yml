@@ -13,6 +13,7 @@
 - name: Insert default config
   blockinfile:
     path: ~/.ssh/config
+    marker: "# {mark} ANSIBLE MANAGED BLOCK base"
     block: |
       Host *
       Compression yes
