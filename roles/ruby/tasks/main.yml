@@ -1,0 +1,10 @@
+- name: Install rbenv
+  homebrew: name={{ item }}
+  with_items:
+    - rbenv
+    - ruby-build
+    - rbenv-aliases
+    - rbenv-communal-gems
+
+#- name: Integrate rbenv to fish
+#  command: omf install rbenv
