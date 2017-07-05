@@ -28,3 +28,4 @@
     - { repo: tmux-plugins/vim-tmux-focus-events, dest: vim-tmux-focus-events }
     - { repo: mhinz/vim-startify, dest: vim-startify }
     - { repo: tpope/vim-endwise, dest: vim-endwise }
+    - { repo: nathanaelkane/vim-indent-guides, dest: vim-indent-guides }

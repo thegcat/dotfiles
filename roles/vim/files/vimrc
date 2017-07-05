@@ -30,6 +30,9 @@ autocmd InsertEnter,WinLeave * set nocursorline
 " 80 columns
 set colorcolumn=80
 
+" Show indent guides
+let g:indent_guides_enable_on_vim_startup = 1
+
 " See http://flaviusim.com/blog/resizing-vim-window-splits-like-a-boss/ for
 " more information about the next 2 sections
 " Windows with at least 5 lines, active Window with 30 lines
