@@ -57,6 +57,10 @@ colorscheme base16-tomorrow-night
 " Copy to/from the system clipboard
 set clipboard+=unnamed
 
+" Don't mix fugitive and editorconfig
+" https://github.com/editorconfig/editorconfig-vim#recommended-options
+let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
+
 " Remove trailing whitespace on save
 autocmd BufEnter * EnableStripWhitespaceOnSave
 
