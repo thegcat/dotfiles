@@ -1,0 +1,19 @@
+# vi: set ft=yaml :
+
+#  Local home directory
+dotfiles_user_home: "{{ '~' | expanduser }}"
+# Where your dotfiles live. Probably don't need to change this.
+dotfiles_home: "{{dotfiles_user_home}}/Code/thegcat/dotfiles"
+
+# Git
+# Name used in commit messages
+full_name: Felix Schäfer
+# Github username
+git_user: thegcat
+git_email: felix@thegcat.net
+
+osx_homebrew_packages:
+
+osx_cask_packages:
+
+
