@@ -1,0 +1,15 @@
+- name: Add fsinfo hosts to the ssh config
+  blockinfile:
+    path: ~/.ssh/config
+    marker: "# {mark} ANSIBLE MANAGED BLOCK fsinfo"
+    insertbefore: BOF
+    block: |
+      Host octopussy
+      Hostname fsinfo.cs.tu-dortmund.de
+      User root
+      Port 2233
+      LocalForward 8301 octopussy.cs.tu-dortmund.de:443
+
+      Host irb
+      Hostname plutonium.cs.tu-dortmund.de
+      User schaef00
