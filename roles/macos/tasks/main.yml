@@ -41,7 +41,7 @@
     - { domain: com.apple.desktopservices, key: DSDontWriteNetworkStores, type: boolean, value: true } # don't write .DS_Store to network volumes
     - { domain: com.apple.finder, key: CreateDesktop, type: boolean, value: false } # don't show anything on the desktop
     - { domain: com.apple.dock, key: persistent-apps, type: array, value: [] } # remove default Apps from the Dock
-    - { domain: com.apple.dock, key: tilesize, type: int, value: 42 } # set size of Dock icons
+    - { domain: com.apple.dock, key: tilesize, type: float, value: 42 } # set size of Dock icons
     - { domain: com.apple.dock, key: showhidden, type: boolean, value: true } # hidden Apps are translucent in the Dock
     - { domain: com.apple.dock, key: expose-animation-duration, type: float, value: 0.1 } # speed up Exposé animations
     - { domain: com.apple.dock, key: expose-group-by-app, type: boolean, value: true } # group windows by App in Exposé
