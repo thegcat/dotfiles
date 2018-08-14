@@ -100,9 +100,7 @@
 - name: Add additional taps to homebrew
   homebrew_tap: name={{ item }}
   with_items:
-    - caskroom/cask
-    - caskroom/fonts
-    - caskroom/homebrew-versions
+    - homebrew/cask-fonts
 
 - name: Install GUI Apps
   homebrew_cask: name={{ item }}
