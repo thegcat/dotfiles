@@ -9,7 +9,7 @@
   register: omf_git
 
 - name: Install Oh-My-Fish
-  command: ~/Code/thegcat/oh-my-fish/bin/install --offline
+  command: ~/Code/thegcat/oh-my-fish/bin/install --offline --noninteractive
   when: omf_git.changed
 
 - name: Configure fish
