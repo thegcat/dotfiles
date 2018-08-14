@@ -14,5 +14,8 @@
 
 - name: Configure fish
   copy:
-    src: config.fish
-    dest: ~/.config/fish/config.fish
+    src: "{{ item.src }}"
+    dest: "{{ item.dest }}"
+  with_items:
+    - { src: config.fish, dest: ~/.config/fish/config.fish }
+    - { src: functions_fish_user_key_bindings.fish, dest: ~/.config/fish/functions/fish_user_key_bindings.fish }
