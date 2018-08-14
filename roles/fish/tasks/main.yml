@@ -11,3 +11,8 @@
 - name: Install Oh-My-Fish
   command: ~/Code/thegcat/oh-my-fish/bin/install --offline
   when: omf_git.changed
+
+- name: Configure fish
+  copy:
+    src: config.fish
+    dest: ~/.config/fish/config.fish
