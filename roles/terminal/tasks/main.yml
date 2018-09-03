@@ -27,12 +27,6 @@
 - name: Install Powerline
   pip: name=powerline-status
 
-- name: Install tpm
-  git:
-    repo: https://github.com/tmux-plugins/tpm
-    dest: ~/.tmux/plugins/tpm
-    depth: 1
-
 - name: Make sure needed directories are present
   file:
     path: ~/.config/powerline/themes/tmux
