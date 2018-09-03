@@ -5,7 +5,6 @@
 - name: Setup dotfiles and environment
   hosts: local
   roles:
-    - tmux
     - { role: package_manager, tags: ['bootstrap'] }
     - fish
     - vim
