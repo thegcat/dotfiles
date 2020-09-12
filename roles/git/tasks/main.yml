@@ -1,5 +1,9 @@
-- name: Install git
-  homebrew: name=git
+- name: Install git and dependencies
+  include: "{{ item }}"
+  with_first_found:
+    - "{{ ansible_distribution }}-{{ ansible_distribution_major_version}}.yml"
+    - "{{ ansible_distribution }}.yml"
+    - "{{ ansible_os_family }}.yml"
 
 - name: Configure git
   git_config:
@@ -9,9 +13,8 @@
   with_items:
     - { key: user.name, value: Felix Schäfer }
     - { key: user.email, value: felix@thegcat.net }
-    - { key: credential.helper, value: osxkeychain } # use macOS keychain to store credentials
-    - { key: core.editor, value: /usr/local/bin/vim } # use 3rd-party vim as editor
-    - { key: core.excludesfile, value: /Users/thegcat/.gitignore_global } # global git ignore
+    - { key: core.editor, value: vim }
+    - { key: core.excludesfile, value: ~/.gitignore_global }
     - { key: push.recurseSubmodules, value: check }
     - { key: push.default, value: current }
     - { key: merge.ff, value: only }

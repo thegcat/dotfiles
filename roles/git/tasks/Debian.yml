@@ -1,0 +1,7 @@
+---
+- name: Install git and dependencies
+  package:
+    name:
+      - git
+    state: latest
+  become: yes

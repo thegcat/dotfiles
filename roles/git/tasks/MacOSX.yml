@@ -1,0 +1,14 @@
+---
+- name: Install git
+  homebrew:
+    name:
+      - git
+    state: latest
+
+- name: Configure git (macOS specific)
+  git_config:
+    name: "{{ item.key }}"
+    value: "{{ item.value }}"
+    scope: global
+  with_items:
+    - { key: credential.helper, value: osxkeychain } # use macOS keychain to store credentials
