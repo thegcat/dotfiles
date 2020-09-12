@@ -1,0 +1,8 @@
+---
+- name: Install terminal dependencies
+  package:
+    name:
+      - tmux
+      - python3
+    state: latest
+  become: yes

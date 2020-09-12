@@ -1,6 +1,3 @@
-- name: Install iTerm2
-  homebrew_cask: name=iterm2
-
 - name: Get Tomorrow themes
   git:
     repo: https://github.com/{{ item.repo }}.git
@@ -11,21 +8,19 @@
     - { repo: chriskempson/base16-iterm2, dest: ~/Code/thegcat/base16-iterm2 }
     - { repo: chriskempson/base16-shell, dest: ~/.config/base16-shell }
 
-- name: Install iTerm2 Tomorrow Night theme
-  command: open '~/Code/thegcat/base16-iterm2/base16-tomorrownight.dark.itermcolors'
-  when: tomorrow_git.results[0].changed
-
-- name: Install tmux
-  homebrew: name={{ item }}
-  with_items:
-    - tmux
-    - reattach-to-user-namespace
-
-- name: Install Python
-  homebrew: name=python
+- name: Instal terminal dependencies
+  include: "{{ item }}"
+  with_first_found:
+    - "{{ ansible_distribution }}-{{ ansible_distribution_major_version}}.yml"
+    - "{{ ansible_distribution }}.yml"
+    - "{{ ansible_os_family }}.yml"
 
 - name: Install Powerline
   pip: name=powerline-status
+
+- name: Get Powerline install directory
+  shell: "pip3 show powerline-status | awk '/^Location: / {print $2}'"
+  register: powerline_dir
 
 - name: Make sure needed directories are present
   file:
@@ -33,9 +28,15 @@
     state: directory
 
 - name: Configure tmux with powerline and fish and tpm
+  template:
+    src: "{{ item.src }}"
+    dest: "{{ item.dest }}"
+  with_items:
+    - { src: tmux.conf.j2, dest: ~/.tmux.conf }
+
+- name: Configure tmux with powerline and fish and tpm
   copy:
     src: "{{ item.src }}"
     dest: "{{ item.dest }}"
   with_items:
-    - { src: tmux.conf, dest: ~/.tmux.conf }
     - { src: powerline_themes_tmux_default.json, dest: ~/.config/powerline/themes/tmux/default.json }

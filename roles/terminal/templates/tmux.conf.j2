@@ -21,12 +21,8 @@ bind '"' split-window -c "#{pane_current_path}"
 bind % split-window -h -c "#{pane_current_path}"
 
 # Use powerline for TMUX
-source "/usr/local/lib/python2.7/site-packages/powerline/bindings/tmux/powerline.conf"
+source "{{ powerline_dir.stdout }}/powerline/bindings/tmux/powerline.conf"
 run-shell 'powerline-daemon -q'
-
-# Make fish the default shell inside TMUX
-set-option -g default-shell /usr/local/bin/fish
-set-environment -g SHELL /usr/local/bin/fish
 
 # List of plugins
 set -g @plugin 'tmux-plugins/tpm'
