@@ -16,6 +16,11 @@
   command: ~/Code/thegcat/oh-my-fish/bin/install --offline --noninteractive
   when: omf_git.changed
 
+- name: Create required directories
+  file:
+    path: ~/.config/fish/functions
+    state: directory
+
 - name: Configure fish
   copy:
     src: "{{ item.src }}"
