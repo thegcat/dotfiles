@@ -1,0 +1,8 @@
+---
+- name: Install fish and dependencies
+  package:
+    name:
+      - fish
+      - git
+    state: latest
+  become: yes
