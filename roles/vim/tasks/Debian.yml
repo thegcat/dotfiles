@@ -1,0 +1,7 @@
+---
+- name: Install vim and dependencies
+  package:
+    name:
+      - vim
+    state: latest
+  become: yes
