@@ -1,0 +1,8 @@
+---
+- name: Install rbenv
+  package:
+    name:
+      - rbenv
+      - ruby-build
+    state: latest
+  become: yes

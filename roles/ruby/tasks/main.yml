@@ -1,10 +1,13 @@
-- name: Install rbenv
-  homebrew: name={{ item }}
+- name: Install ruby dependencies
+  include: "{{ item }}"
+  with_first_found:
+    - "{{ ansible_distribution }}-{{ ansible_distribution_major_version}}.yml"
+    - "{{ ansible_distribution }}.yml"
+    - "{{ ansible_os_family }}.yml"
+
+- name: Install some Oh-My-Fish plugins
+  shell: omf install "{{ item }}"
+  args:
+    executable: "{{ fish_executable.stdout }}"
   with_items:
     - rbenv
-    - ruby-build
-    - rbenv-aliases
-    - rbenv-communal-gems
-
-#- name: Integrate rbenv to fish
-#  command: omf install rbenv

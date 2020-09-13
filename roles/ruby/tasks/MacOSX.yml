@@ -1,0 +1,7 @@
+- name: Install rbenv
+  homebrew: name={{ item }}
+  with_items:
+    - rbenv
+    - ruby-build
+    - rbenv-aliases
+    - rbenv-communal-gems
