@@ -5,16 +5,16 @@
     - "{{ ansible_distribution }}.yml"
     - "{{ ansible_os_family }}.yml"
 
+- name: Get fish executable
+  command: which fish
+  register: fish_executable
+
 - name: Get Oh-My-Fish
   git:
     repo: https://github.com/oh-my-fish/oh-my-fish
     dest: ~/Code/thegcat/oh-my-fish
     depth: 1
   register: omf_git
-
-- name: Install Oh-My-Fish
-  command: ~/Code/thegcat/oh-my-fish/bin/install --offline --noninteractive
-  when: omf_git.changed
 
 - name: Create required directories
   file:
@@ -28,3 +28,15 @@
   with_items:
     - { src: config.fish, dest: ~/.config/fish/config.fish }
     - { src: functions_fish_user_key_bindings.fish, dest: ~/.config/fish/functions/fish_user_key_bindings.fish }
+
+- name: Install Oh-My-Fish
+  command: ~/Code/thegcat/oh-my-fish/bin/install --offline --noninteractive
+  when: omf_git.changed
+
+- name: Install some Oh-My-Fish plugins
+  shell: omf install "{{ item }}"
+  args:
+    executable: "{{ fish_executable.stdout }}"
+  with_items:
+    - bobthefish
+    - direnv
