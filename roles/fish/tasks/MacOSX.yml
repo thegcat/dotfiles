@@ -3,4 +3,5 @@
     name:
       - fish
       - git
+      - direnv
     state: latest
