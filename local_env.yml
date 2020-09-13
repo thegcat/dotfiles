@@ -8,7 +8,7 @@
     - { role: package_manager, tags: ['bootstrap'] }
     - fish
     - vim
-    - macos
+    - system_base
     - ssh
     - terminal
     - git
