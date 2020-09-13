@@ -1,0 +1,17 @@
+---
+- name: Install CLI Apps
+  package:
+    name:
+      - ack
+      - ansible
+      - curl
+      - htop
+      - lftp
+      - mmv
+      - p7zip-full
+      - p7zip-rar
+      - parallel
+      - tree
+      - youtube-dl
+    state: present
+  become: yes
