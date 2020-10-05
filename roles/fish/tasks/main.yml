@@ -21,6 +21,11 @@
     path: ~/.config/fish/functions
     state: directory
 
+- name: Install fzf integration
+  get_url:
+    url: https://raw.githubusercontent.com/junegunn/fzf/master/shell/key-bindings.fish
+    dest: ~/.config/fish/functions/fzf_key_bindings.fish
+
 - name: Configure fish
   copy:
     src: "{{ item.src }}"
