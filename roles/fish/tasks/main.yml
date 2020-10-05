@@ -7,6 +7,7 @@
 
 - name: Get fish executable
   command: which fish
+  check_mode: no
   register: fish_executable
 
 - name: Get Oh-My-Fish
