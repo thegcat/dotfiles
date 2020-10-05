@@ -33,3 +33,4 @@
     - { repo: tpope/vim-endwise, dest: vim-endwise }
     - { repo: nathanaelkane/vim-indent-guides, dest: vim-indent-guides }
     - { repo: editorconfig/editorconfig-vim, dest: editorconfig-vim }
+    - { repo: tpope/vim-rails, dest: vim-rails }
