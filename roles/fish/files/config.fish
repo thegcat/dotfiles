@@ -15,5 +15,12 @@ function save_history --on-event fish_preexec
   history save
 end
 
-alias g=git
-set -g fish_user_paths "/usr/local/opt/mysql@5.7/bin" $fish_user_paths
+alias g='git'
+alias cat='bat'
+alias ping='prettyping --nolegend'
+
+set -g fish_user_paths "/usr/local/opt/mysql@5.6/bin" $fish_user_paths
+set -gx LDFLAGS "-L/usr/local/opt/mysql@5.6/lib"
+set -gx CPPFLAGS "-I/usr/local/opt/mysql@5.6/include"
+
+set -x VIRTUAL_ENV_DISABLE_PROMPT 1
