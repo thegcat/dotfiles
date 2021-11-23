@@ -10,6 +10,16 @@
   check_mode: no
   register: fish_executable
 
+- name: Enable using fish as login shell
+  lineinfile:
+    path: /etc/shells
+    line: "{{ fish_executable.stdout }}"
+    insertafter: EOF
+  become: yes
+
+- name: Make fish the login shell
+  shell: "chsh -s {{ fish_executable.stdout }}"
+
 - name: Get Oh-My-Fish
   git:
     repo: https://github.com/oh-my-fish/oh-my-fish
