@@ -88,6 +88,7 @@
     - curl
     - heroku
     - htop-osx
+    - lsd
     - lftp
     - mas
     - mmv
