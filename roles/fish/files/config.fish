@@ -20,8 +20,10 @@ alias cat='bat'
 alias ls='lsd'
 alias ping='prettyping --nolegend'
 
-set -g fish_user_paths "/usr/local/opt/mysql@5.6/bin" $fish_user_paths
-set -gx LDFLAGS "-L/usr/local/opt/mysql@5.6/lib"
-set -gx CPPFLAGS "-I/usr/local/opt/mysql@5.6/include"
+fish_add_path /opt/homebrew/bin
+
+set -g fish_user_paths "/opt/homebrew/opt/mysql@5.6/bin" $fish_user_paths
+set -gx LDFLAGS "-L/opt/homebrew/opt/mysql@5.6/lib"
+set -gx CPPFLAGS "-I/opt/homebrew/opt/mysql@5.6/include"
 
 set -x VIRTUAL_ENV_DISABLE_PROMPT 1
