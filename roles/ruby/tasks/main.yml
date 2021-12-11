@@ -11,3 +11,15 @@
     executable: "{{ fish_executable.stdout }}"
   with_items:
     - rbenv
+
+- name: install a sensible .gemrc
+  copy:
+    dest: ~/.gemrc
+    content: |
+      gem: --no-document --no-ri --no-rdoc
+
+- name: set some defaults for rbenv installation
+  copy:
+    dest: ~/.config/fish/conf.d/ruby-build.fish
+    content: |
+      set -agx RUBY_CONFIGURE_OPTS --disable-install-doc
