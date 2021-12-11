@@ -43,6 +43,7 @@
     dest: "{{ item.dest }}"
   with_items:
     - { src: config.fish, dest: ~/.config/fish/config.fish }
+    - { src: theme.fish, dest: ~/.config/fish/conf.d/theme.fish }
     - { src: functions_fish_user_key_bindings.fish, dest: ~/.config/fish/functions/fish_user_key_bindings.fish }
 
 - name: Install Oh-My-Fish
