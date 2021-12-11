@@ -44,6 +44,7 @@
   with_items:
     - { src: config.fish, dest: ~/.config/fish/config.fish }
     - { src: theme.fish, dest: ~/.config/fish/conf.d/theme.fish }
+    - { src: homebrew.fish, dest: ~/.config/fish/conf.d/homebrew.fish }
     - { src: functions_fish_user_key_bindings.fish, dest: ~/.config/fish/functions/fish_user_key_bindings.fish }
 
 - name: Install Oh-My-Fish
@@ -56,4 +57,5 @@
     executable: "{{ fish_executable.stdout }}"
   with_items:
     - bobthefish
+    - brew
     - direnv
