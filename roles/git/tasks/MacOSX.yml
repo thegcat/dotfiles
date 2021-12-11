@@ -3,6 +3,7 @@
   homebrew:
     name:
       - git
+      - git-delta
     state: latest
 
 - name: Configure git (macOS specific)

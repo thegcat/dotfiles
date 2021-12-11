@@ -15,14 +15,15 @@
     - { key: user.email, value: felix@thegcat.net }
     - { key: core.editor, value: vim }
     - { key: core.excludesfile, value: ~/.gitignore_global }
-    - { key: core.page, value: "diff-so-fancy | less --tabs=4 -RFX" }
-    - { key: color.diff-highlight.oldNormal, value: red bold }
-    - { key: color.diff-highlight.oldHighlight, value: red bold 52 }
-    - { key: color.diff-highlight.newNormal, value: green bold }
-    - { key: color.diff-highlight.newHighlight, value: green bold 22 }
     - { key: push.recurseSubmodules, value: check }
     - { key: push.default, value: current }
+    - { key: core.pager, value: delta }
+    - { key: interactive.diffFilter, value: delta --color-only --features=interactive }
+    - { key: delta.features, value: line-numbers decorations }
+    - { key: delta.syntax-theme, value: base16-256 }
+    - { key: delta.navigate, value: true }
     - { key: merge.ff, value: only }
+    - { key: merge.conflictstyle, value: diff3 }
     - { key: alias.s, value: status -sb }
     - { key: alias.a, value: add -p }
     - { key: alias.p, value: push }
@@ -49,22 +50,11 @@
     - { key: pretty.onelineverbose, value: '%C(yellow)%h%Creset (%Cblue%aN%Creset)%Cred%d%Creset %s [%Cgreen%cd, %ad%Creset]' }
     - { key: pull.rebase, value: true }
     - { key: diff.compactionHeuristic, value: true }
+    - { key: diff.colorMoved, value: default }
     - { key: core.whitespace, value: "-indent-with-non-tab,trailing-space,cr-at-eol" }
     - { key: apply.whitespace, value: fix }
     - { key: branch.autosetuprebase, value: always }
     - { key: color.ui, value: auto }
-    - { key: color.branch.current, value: yellow reverse }
-    - { key: color.branch.local, value: yellow }
-    - { key: color.branch.remote, value: green }
-    - { key: color.diff.meta, value: 11 }
-    - { key: color.diff.frag, value: magenta bold }
-    - { key: color.diff.commit, value: yellow bold }
-    - { key: color.diff.old, value: red bold }
-    - { key: color.diff.new, value: green bold }
-    - { key: color.diff.whitespace, value: red reverse }
-    - { key: color.status.added, value: yellow }
-    - { key: color.status.changed, value: green }
-    - { key: color.status.untracked, value: cyan }
     - { key: format.pretty, value: "format:%C(yellow)%h %Cblue%>(12)%ad %Cgreen%<(7)%aN%Cred%d %Creset%s" }
     - { key: log.date, value: relative }
 
