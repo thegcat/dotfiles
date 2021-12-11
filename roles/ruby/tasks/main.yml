@@ -18,6 +18,13 @@
     content: |
       gem: --no-document --no-ri --no-rdoc
 
+- name: install a sensible bundle config
+  copy:
+    dest: ~/.bundle/config
+    content: |
+      ---
+      BUNDLE_JOBS: "8"
+
 - name: set some defaults for rbenv installation
   copy:
     dest: ~/.config/fish/conf.d/ruby-build.fish
