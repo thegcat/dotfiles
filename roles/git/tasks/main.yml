@@ -62,6 +62,10 @@
     - { key: format.pretty, value: "format:%C(yellow)%h %Cblue%>(12)%ad %Cgreen%<(7)%aN%Cred%d %Creset%s" }
     - { key: log.date, value: relative }
     - { key: init.defaultBranch, value: main }
+    - { key: checkout.workers, value: 0 }
+    - { key: fetch.parallel, value: 0 }
+    - { key: pack.threads, value: 0 }
+    - { key: submodule.fetchjobs, value: 0 }
 
 - name: Install global gitignore
   copy:
