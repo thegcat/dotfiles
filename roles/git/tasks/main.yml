@@ -17,7 +17,7 @@
     - { key: core.excludesfile, value: ~/.gitignore_global }
     - { key: core.pager, value: delta }
     - { key: interactive.diffFilter, value: delta --color-only --features=interactive }
-    - { key: delta.features, value: line-numbers decorations }
+    - { key: delta.features, value: line-numbers }
     - { key: delta.syntax-theme, value: base16-256 }
     - { key: delta.navigate, value: true }
     - { key: push.recurseSubmodules, value: on-demand }
