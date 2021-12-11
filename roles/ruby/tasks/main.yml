@@ -10,6 +10,8 @@
   args:
     executable: "{{ fish_executable.stdout }}"
   with_items:
+    - bundler
+    - gem
     - rbenv
 
 - name: install a sensible .gemrc
