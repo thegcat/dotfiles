@@ -15,15 +15,19 @@
     - { key: user.email, value: felix@thegcat.net }
     - { key: core.editor, value: vim }
     - { key: core.excludesfile, value: ~/.gitignore_global }
-    - { key: push.recurseSubmodules, value: check }
-    - { key: push.default, value: current }
     - { key: core.pager, value: delta }
     - { key: interactive.diffFilter, value: delta --color-only --features=interactive }
     - { key: delta.features, value: line-numbers decorations }
     - { key: delta.syntax-theme, value: base16-256 }
     - { key: delta.navigate, value: true }
+    - { key: push.recurseSubmodules, value: on-demand }
+    - { key: push.default, value: upstream }
     - { key: merge.ff, value: only }
+    - { key: merge.autostash, value: true }
     - { key: merge.conflictstyle, value: diff3 }
+    - { key: rebase.autostash, value: true }
+    - { key: status.showstash, value: true }
+    - { key: status.submodulesummary, value: true }
     - { key: alias.s, value: status -sb }
     - { key: alias.a, value: add -p }
     - { key: alias.p, value: push }
@@ -42,7 +46,7 @@
     - { key: alias.si, value: submodule init }
     - { key: alias.su, value: submodule update }
     - { key: alias.ss, value: submodule sync }
-    - { key: alias.fp, value: push --force }
+    - { key: alias.fp, value: push --force-with-lease }
     - { key: alias.us, value: reset HEAD }
     - { key: alias.uc, value: reset --soft HEAD^ }
     - { key: alias.tree, value: log --graph --pretty=onelineverbose --abbrev-commit }
@@ -57,6 +61,7 @@
     - { key: color.ui, value: auto }
     - { key: format.pretty, value: "format:%C(yellow)%h %Cblue%>(12)%ad %Cgreen%<(7)%aN%Cred%d %Creset%s" }
     - { key: log.date, value: relative }
+    - { key: init.defaultBranch, value: main }
 
 - name: Install global gitignore
   copy:
