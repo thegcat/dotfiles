@@ -17,3 +17,5 @@
     block: |
       Host *
       Compression yes
+
+      Include conf.d/*
