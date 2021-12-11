@@ -5,3 +5,9 @@
     - ruby-build
     - rbenv-aliases
     - rbenv-communal-gems
+
+- name: set some defaults for rbenv installation
+  copy:
+    dest: ~/.config/fish/conf.d/ruby-build-macos.fish
+    content: |
+      set -agx RUBY_CONFIGURE_OPTS --with-openssl-dir=(brew --prefix openssl@1.1)
