@@ -5,7 +5,7 @@
     depth: 1
   register: tomorrow_git
   with_items:
-    - { repo: chriskempson/base16-iterm2, dest: ~/Code/thegcat/base16-iterm2 }
+    - { repo: martinlindhe/base16-iterm2, dest: ~/Code/thegcat/base16-iterm2 }
     - { repo: chriskempson/base16-shell, dest: ~/.config/base16-shell }
 
 - name: Instal terminal dependencies

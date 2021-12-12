@@ -14,6 +14,6 @@
     state: latest
 
 - name: Install iTerm2 Tomorrow Night theme
-  command: open '~/Code/thegcat/base16-iterm2/base16-tomorrownight.dark.itermcolors'
+  command: open '~/Code/thegcat/base16-iterm2/itermcolors/base16-tomorrow-night.itermcolors'
   when: tomorrow_git.results[0].changed
 
