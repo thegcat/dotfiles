@@ -17,7 +17,7 @@
 
 - name: Install Powerline
   pip:
-    name: powerline-status
+    name: git+https://github.com/powerline/powerline.git@2.8.2
     executable: pip3
 
 - name: Get Powerline install directory
