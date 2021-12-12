@@ -23,6 +23,16 @@
     value:
       - '<dict><key>HIDKeyboardModifierMappingDst</key><integer>30064771113</integer><key>HIDKeyboardModifierMappingSrc</key><integer>30064771129</integer></dict>'
 
+- name: Remap CapsLock to Escape (wireless keyboard)
+  when: not "    \"com.apple.keyboard.modifiermapping.alt_handler_id-83\" =     (\n                {\n            HIDKeyboardModifierMappingDst = 30064771113;\n            HIDKeyboardModifierMappingSrc = 30064771129;\n        }\n    );" in currentHost_defaults.stdout
+  osx_defaults:
+    host: currentHost
+    key: com.apple.keyboard.modifiermapping.alt_handler_id-83
+    type: array
+    array_add: true
+    value:
+      - '<dict><key>HIDKeyboardModifierMappingDst</key><integer>30064771113</integer><key>HIDKeyboardModifierMappingSrc</key><integer>30064771129</integer></dict>'
+
 # see:
 # * https://wilsonmar.github.io/mac-osx-config-dotfiles/
 - name: Make macOS more pretty and usable
