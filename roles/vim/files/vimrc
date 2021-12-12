@@ -76,7 +76,7 @@ let g:ctrlp_custom_ignore = {
   \ 'file': '\v\.(git)$',
   \ }
 
-# ale
+" ale
 let g:ale_sign_warning=''
 let g:ale_sign_error=''
 hi ALEErrorSign ctermfg=9 ctermbg=18
@@ -89,4 +89,3 @@ autocmd FileType xml setlocal textwidth=78
 
 " ignore certain file types in searches
 set wildignore+=*.so,*.swp,*.zip,*.log,*.aux,*~,.DS_Store,*.pyg,*.o
-
