@@ -45,33 +45,37 @@
     - { domain: NSGlobalDomain, key: AppleInterfaceTheme, type: string, value: Dark } # dark theme
     - { domain: NSGlobalDomain, key: AppleKeyboardUIMode, type: integer, value: 3 } # enable tabs in dialogs
     - { domain: NSGlobalDomain, key: com.apple.trackpad.scaling, type: integer, value: 2 } # faster trackpad
+    - { domain: NSGlobalDomain, key: PMPrintingExpandedStateForPrint, type: boolean, value: true } # show extended print panel
+    - { domain: NSGlobalDomain, key: com.apple.mouse.tapBehavior, type: integer, value: 1 } # tap to click
+    # - { domain: com.apple.driver.AppleBluetoothMultitouch.trackpad, key: Clicking, type: boolean, value: true } # tap to click
     - { domain: com.apple.screensaver, key: askForPassword, type: integer, value: 1 } # require password from screensaver
     - { domain: com.apple.screensaver, key: askForPasswordDelay, type: float, value: 0 } # require password immediately
     - { domain: com.apple.finder, key: FXPreferredViewStyle, type: string, value: Nlsv } # Finder defaults to list view
-    - { domain: com.apple.desktopservices, key: DSDontWriteNetworkStores, type: boolean, value: true } # don't write .DS_Store to network volumes
     - { domain: com.apple.finder, key: CreateDesktop, type: boolean, value: false } # don't show anything on the desktop
+    - { domain: com.apple.finder, key: NewWindowTarget, type: string, value: PfHm } # show home folder in new Finder windows
+    - { domain: com.apple.finder, key: NewWindowTargetPath, type: string, value: 'file:///Users/thegcat' } # show home folder in new Finder windows
     - { domain: com.apple.dock, key: persistent-apps, type: array, value: [] } # remove default Apps from the Dock
-    - { domain: com.apple.dock, key: tilesize, type: float, value: 42 } # set size of Dock icons
+    - { domain: com.apple.dock, key: tilesize, type: float, value: 60 } # set size of Dock icons
     - { domain: com.apple.dock, key: showhidden, type: boolean, value: true } # hidden Apps are translucent in the Dock
     - { domain: com.apple.dock, key: expose-animation-duration, type: float, value: 0.1 } # speed up Exposé animations
     - { domain: com.apple.dock, key: expose-group-by-app, type: boolean, value: true } # group windows by App in Exposé
     - { domain: com.apple.dock, key: autohide, type: boolean, value: true } # autohide the Dock
     - { domain: com.apple.dock, key: autohide-delay, type: float, value: 0 } # faster Dock autohide
     - { domain: com.apple.dock, key: autohide-time-modifier, type: float, value: 0.5 } # faster Dock autohide
+    - { domain: com.apple.dock, key: autohide-fullscreen-delayed, type: boolean, value: false } # disable delay for showing Dock in fullscreen
     - { domain: com.apple.mail, key: DisableInlineAttachmentViewing, type: boolean, value: true } # don't show attachments inline in Mail.app
+    - { domain: com.apple.mail, key: AddressesIncludeNameOnPasteboard, type: boolean, value: false } # don't include name with addresses copied from Mail
     - { domain: com.apple.Safari, key: IncludeInternalDebugMenu, type: boolean, value: true } # show Safari debug menu
     - { domain: com.apple.Safari, key: IncludeDevelopMenu, type: boolean, value: true } # show Safari debug menu
     - { domain: com.apple.Safari, key: WebKitDeveloperExtrasEnabledPreferenceKey, type: boolean, value: true } # show Safari debug menu
+    - { domain: com.apple.Safari, key: FindOnPageMatchesWordStartsOnly, type: boolean, value: false } # switch Safari search banner to "contains"
     - { domain: com.apple.Safari, key: com.apple.Safari.ContentPageGroupIdentifier.WebKit2DeveloperExtrasEnabled, type: boolean, value: true } # show Safari debug menu
     - { domain: NSGlobalDomain, key: WebKitDeveloperExtras, type: boolean, value: true } # show Webkit debug menu
     - { domain: NSGlobalDomain, key: NSNavPanelExpandedStateForSaveMode, type: boolean, value: true } # show extended save panel
     - { domain: NSGlobalDomain, key: NSNavPanelExpandedStateForSaveMode2, type: boolean, value: true } # show extended save panel
     - { domain: NSGlobalDomain, key: NSDocumentSaveNewDocumentsToCloud, type: boolean, value: false } # save to local disk by default
-    - { domain: com.apple.finder, key: NewWindowTarget, type: string, value: PfHm } # show home folder in new Finder windows
-    - { domain: com.apple.finder, key: NewWindowTargetPath, type: string, value: 'file:///Users/thegcat' } # show home folder in new Finder windows
     - { domain: com.apple.desktopservices, key: DSDontWriteNetworkStores, type: boolean, value: true } # don't create .DS_Store on network volumes
     - { domain: com.apple.desktopservices, key: DSDontWriteUSBStores, type: boolean, value: true } # don't create .DS_Store on USB volumes
-    - { domain: com.apple.mail, key: AddressesIncludeNameOnPasteboard, type: boolean, value: false } # don't include name with addresses copied from Mail
     - { domain: com.googlecode.iterm2, key: PromptOnQuit, type: boolean, value: false } # don't ask for confirmation on quitting iTerm2
     - { domain: com.google.Chrome, key: DisablePrintPreview, type: boolean, value: true } # use system print dialog in Chrome
     - { domain: com.google.Chrome.canary, key: DisablePrintPreview, type: boolean, value: true } # use system print dialog in Chrome Canary
