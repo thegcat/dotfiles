@@ -29,7 +29,6 @@
     - { repo: mileszs/ack.vim, dest: ack.vim }
     - { repo: christoomey/vim-tmux-navigator, dest: vim-tmux-navigator }
     - { repo: tpope/vim-fugitive, dest: vim-fugitive }
-    - { repo: tmux-plugins/vim-tmux-focus-events, dest: vim-tmux-focus-events }
     - { repo: tpope/vim-endwise, dest: vim-endwise }
     - { repo: nathanaelkane/vim-indent-guides, dest: vim-indent-guides }
     - { repo: editorconfig/editorconfig-vim, dest: editorconfig-vim }
