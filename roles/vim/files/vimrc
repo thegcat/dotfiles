@@ -27,8 +27,8 @@ set smartcase
 autocmd InsertLeave,WinEnter * set cursorline
 autocmd InsertEnter,WinLeave * set nocursorline
 
-" 80 columns
-set colorcolumn=80
+" 120 columns
+set colorcolumn=120
 
 " Show indent guides
 let g:indent_guides_enable_on_vim_startup = 1
