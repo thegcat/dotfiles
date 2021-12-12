@@ -72,12 +72,9 @@ let g:ctrlp_custom_ignore = {
   \ 'file': '\.git$',
   \ }
 
-" syntastic
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_tex_checkers = ['chktex']
+# ale
+let g:ale_sign_warning='!'
+let g:ale_sign_error='X'
 
 " Set 78 char width for textfiles
 autocmd FileType text setlocal textwidth=78
