@@ -119,39 +119,46 @@
 - name: Add additional taps to homebrew
   homebrew_tap: name={{ item }}
   with_items:
+    - homebrew/cask-drivers
     - homebrew/cask-fonts
+    - homebrew/cask-versions
 
 - name: Install GUI Apps
   homebrew_cask: name={{ item }}
   with_items:
-    - 1password
+    - 1password6
     - air-video-server-hd
+    - airbuddy
+    - apache-directory-studio
     - bartender
-    - freesmug-chromium
+    # - caldigit-docking-utility # not M1 compatible yet
+    # - caldigit-thunderbolt-charging # not M1 compatible yet
     - controlplane
     - cyberduck
-    - dash2
-    - dropbox
-    - fantastical
+    - element
+    - eloston-chromium
     - firefox
-    - gfxcardstatus
     - google-chrome
-    - gpgtools
+    - gpg-suite
     - grandperspective
     - hammerspoon
-    - ios-saver
+    - iina
     - libreoffice
     - little-snitch
-    - mactex
+    - maccy
+    - mactex-no-gui
+    - mumble
+    - netnewswire
+    # - nextcloud # not M1 compatible yet
     - onyx
     - paparazzi
     - pg-commander
-    - psequel
-    - riot
-    - satellite-eyes
-    - sequel-pro
+    - qlmarkdown
+    # - qlvideo # not M1 compatible yet
+    - rectangle
+    - rocket-chat
+    - sequel-ace
     - signal
-    - sizeup
     - skype
     - slack
     - textmate
@@ -168,7 +175,7 @@
   homebrew_cask: name={{ item }}
   with_items:
     - font-hack-nerd-font
-    - font-firacode-nerd-font
+    - font-fira-code-nerd-font
 
 - name: List installed App Store Apps
   command: mas list
@@ -178,11 +185,15 @@
 - name: Install App Store Apps
   command: mas install {{ item }}
   with_items:
-    - 557168941 # Tweetbot
+    - 1384080005 # Tweetbot 3
     - 904280696 # Things 3
     - 409183694 # Keynote
     - 409201541 # Pages
     - 409203825 # Numbers
+    - 1365531024 # 1blocker
+    - 545519333 # Amazon Prime Video
+    - 1591051659 # Screegle
+    - 1591303229 # Vinegar
   when: "'{{ item }}' not in mas_list.stdout"
 
 - name: Check if any App Store Apps are outdated
