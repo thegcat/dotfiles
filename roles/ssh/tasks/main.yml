@@ -5,16 +5,10 @@
     generate_ssh_key: yes
     ssh_key_type: ed25519
 
-- name: Make sure the ssh config file is present
-  file:
-    path: ~/.ssh/config
-    state: touch
-
-- name: Insert default config
-  blockinfile:
-    path: ~/.ssh/config
-    marker: "# {mark} ANSIBLE MANAGED BLOCK base"
-    block: |
+- name: Add default config
+  copy:
+    dest: ~/.ssh/config
+    content: |
       Host *
       Compression yes
 
