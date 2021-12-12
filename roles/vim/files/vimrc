@@ -61,8 +61,9 @@ set clipboard+=unnamed
 " https://github.com/editorconfig/editorconfig-vim#recommended-options
 let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
 
-" Remove trailing whitespace on save
-autocmd BufEnter * EnableStripWhitespaceOnSave
+" better whitespace
+let g:strip_whitespace_on_save = 1
+let g:strip_whitelines_at_eof=1
 
 " CtrlP
 let g:ctrlp_clear_cache_on_exit = 0
