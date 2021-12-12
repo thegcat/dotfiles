@@ -99,18 +99,22 @@
   with_items:
     - ack
     - ansible
+    - bat
     - curl
-    - heroku
     - htop-osx
+    - jq
     - lsd
     - lftp
     - mas
     - mmv
     - mobile-shell
+    - openssh
     - p7zip
     - parallel
+    - prettyping
+    - sshuttle
     - tree
-    - youtube-dl
+    - yt-dlp
 
 - name: Add additional taps to homebrew
   homebrew_tap: name={{ item }}
