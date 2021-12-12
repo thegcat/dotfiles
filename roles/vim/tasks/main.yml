@@ -20,6 +20,7 @@
     - { repo: tpope/vim-sensible, dest: vim-sensible }
     - { repo: dense-analysis/ale, dest: ale }
     - { repo: ctrlpvim/ctrlp.vim, dest: ctrlp.vim }
+    - { repo: ryanoasis/vim-devicons, dest: vim-devicons }
     - { repo: chriskempson/base16-vim, dest: base16-vim }
     - { repo: ntpeters/vim-better-whitespace, dest: vim-better-whitespace }
     - { repo: mhinz/vim-signify, dest: vim-signify }
