@@ -102,6 +102,7 @@
     - bat
     - curl
     - htop-osx
+    - httpie
     - jq
     - lsd
     - lftp
