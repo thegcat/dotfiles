@@ -43,7 +43,7 @@
     - { src: functions_fish_user_key_bindings.fish, dest: ~/.config/fish/functions/fish_user_key_bindings.fish }
 
 - name: Install Oh-My-Fish
-  command: ~/Code/thegcat/oh-my-fish/bin/install --offline --noninteractive
+  command: ~/Code/thegcat/oh-my-fish/bin/install --offline --noninteractive --yes
   when: omf_git.changed
 
 - name: Install some Oh-My-Fish plugins
