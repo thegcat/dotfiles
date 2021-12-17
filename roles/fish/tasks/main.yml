@@ -51,6 +51,5 @@
   args:
     executable: "{{ fish_executable.stdout }}"
   with_items:
-    - bobthefish
     - brew
     - direnv

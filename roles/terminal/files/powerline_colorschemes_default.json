@@ -1,0 +1,7 @@
+{
+  "groups": {
+    "date": { "fg": "gray8", "bg": "background" },
+    "transparent": { "fg": "background", "bg": "background" },
+    "prompt": { "fg": "darkblue", "bg": "background" }
+  }
+}

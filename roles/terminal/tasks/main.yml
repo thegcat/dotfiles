@@ -43,3 +43,6 @@
     dest: "{{ item.dest }}"
   with_items:
     - { src: powerline_themes_tmux_default.json, dest: ~/.config/powerline/themes/tmux/default.json }
+    - { src: powerline_themes_shell_default.json, dest: ~/.config/powerline/themes/shell/default.json }
+    - { src: powerline_colorschemes_default.json, dest: ~/.config/powerline/colorschemes/default.json }
+    - { src: powerline_colors.json, dest: ~/.config/powerline/colors.json }

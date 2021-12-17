@@ -1,15 +1,12 @@
-# Use the terminal-dark variant of bobthefish theme
-set -g theme_color_scheme terminal2-dark
-set -g theme_nerd_fonts yes
-set -g theme_newline_cursor yes
-set -g theme_display_git_master_branch yes
-set -g theme_show_exit_status yes
-set -g fish_prompt_pwd_dir_length 0
-
 # 256-color shenanigans
 if status --is-interactive
   eval sh $HOME/.config/base16-shell/scripts/base16-tomorrow-night.sh
 end
 
-# bobthefish has its own virtual env prompt
-set -x VIRTUAL_ENV_DISABLE_PROMPT 1
+# Use powerline for the prompt
+set fish_function_path $fish_function_path "/opt/homebrew/lib/python3.9/site-packages/powerline/bindings/fish"
+powerline-setup
+
+function _powerline_set_columns --on-signal WINCH
+  set -g _POWERLINE_COLUMNS (_powerline_columns)
+end
