@@ -37,6 +37,7 @@
     - { key: alias.cp, value: cherry-pick -e }
     - { key: alias.df, value: diff }
     - { key: alias.ds, value: diff --cached }
+    - { key: alias.dw, value: diff --color-words }
     - { key: alias.re, value: rebase --autosquash }
     - { key: alias.ri, value: rebase --interactive --autosquash }
     - { key: alias.rc, value: rebase --continue }
