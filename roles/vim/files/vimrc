@@ -80,6 +80,8 @@ let g:ctrlp_custom_ignore = {
 let g:ale_sign_warning=''
 let g:ale_sign_error=''
 hi ALEErrorSign ctermfg=9 ctermbg=18
+nmap <silent> <C-n> <Plug>(ale_previous_wrap)
+nmap <silent> <C-m> <Plug>(ale_next_wrap)
 
 " Set 78 char width for textfiles
 autocmd FileType text setlocal textwidth=78
