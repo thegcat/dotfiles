@@ -1,4 +1,8 @@
 ---
-- name: Install vim with homebrew
-  homebrew: name=vim state=latest
-
+- name: Install vim and some supporting software
+  homebrew:
+    name:
+      - vim
+      # some linters
+      - markdownlint-cli
+    state: latest
