@@ -1,6 +1,9 @@
 runtime bundle/vim-pathogen/autoload/pathogen.vim
 execute pathogen#infect()
 
+" map leader to comma
+let mapleader = ","
+
 " Use syntax-highlighting
 syntax on
 
