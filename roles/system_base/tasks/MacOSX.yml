@@ -88,7 +88,7 @@
     - {domain: com.apple.SoftwareUpdate, key: ScheduleFrequency, type: integer, value: 1}  # check for Mac App Store updates daily
 
 - name: Enable firewall
-  become: yes
+  become: true
   become_method: sudo
   tags: ['bootstrap']
   command: /usr/libexec/ApplicationFirewall/socketfilterfw --setglobalstate on
