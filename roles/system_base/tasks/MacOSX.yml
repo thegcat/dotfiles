@@ -98,7 +98,6 @@
 - name: Install CLI Apps
   homebrew: name={{ item }} state=present
   with_items:
-    - ack
     - ansible
     - bat
     - curl
@@ -114,6 +113,7 @@
     - p7zip
     - parallel
     - prettyping
+    - ripgrep
     - sshuttle
     - tree
     - yt-dlp
