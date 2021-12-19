@@ -101,6 +101,8 @@
     - ansible
     - bat
     - curl
+    - fd
+    - fx
     - htop-osx
     - httpie
     - jq
@@ -113,9 +115,14 @@
     - p7zip
     - parallel
     - prettyping
+    - procs
+    - progress
     - ripgrep
     - sshuttle
     - tree
+    - up
+    - saulpw/vd/visidata
+    - yamllint
     - yt-dlp
 
 - name: Add additional taps to homebrew
