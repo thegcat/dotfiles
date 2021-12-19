@@ -1,3 +1,4 @@
+---
 - name: Get base defaults config
   command: defaults -currentHost read -g
   register: currentHost_defaults
