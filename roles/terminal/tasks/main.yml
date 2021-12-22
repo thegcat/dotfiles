@@ -32,12 +32,13 @@
 
 - name: Make sure needed directories are present
   file:
-    path: "~/.config/powerline/{{ item }}"
+    path: "{{ item }}"
     state: directory
   loop:
-    - themes/tmux
-    - themes/shell
-    - colorschemes
+    - ~/.config/powerline/themes/tmux
+    - ~/.config/powerline/themes/shell
+    - ~/.config/powerline/colorschemes
+    - ~/.config/bat
 
 - name: Configure tmux with powerline and fish and tpm
   template:
@@ -46,7 +47,7 @@
   with_items:
     - {src: tmux.conf.j2, dest: ~/.tmux.conf}
 
-- name: Configure tmux with powerline and fish and tpm
+- name: Configure some terminal stuff
   copy:
     src: "{{ item.src }}"
     dest: "{{ item.dest }}"
@@ -55,3 +56,4 @@
     - {src: powerline_themes_shell_default.json, dest: ~/.config/powerline/themes/shell/default.json}
     - {src: powerline_colorschemes_default.json, dest: ~/.config/powerline/colorschemes/default.json}
     - {src: powerline_colors.json, dest: ~/.config/powerline/colors.json}
+    - {src: bat_config, dest: ~/.config/bat/config}
