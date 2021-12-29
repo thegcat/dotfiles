@@ -5,3 +5,9 @@
       - vim
     state: latest
   become: yes
+
+- name: Install some more dependencies
+  npm:
+    name: markdownlint-cli
+    state: latest
+    global: true
