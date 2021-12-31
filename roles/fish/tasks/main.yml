@@ -59,6 +59,4 @@
   args:
     executable: "{{ fish_executable.stdout }}"
   with_items:
-    - brew
     - direnv
-    - https://github.com/thegcat/caffeinate.git
