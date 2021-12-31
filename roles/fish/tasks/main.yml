@@ -1,3 +1,4 @@
+---
 - name: Install fish and dependencies
   include: "{{ item }}"
   with_first_found:
