@@ -4,6 +4,10 @@ function save_history --on-event fish_preexec
 end
 
 alias g='git'
-alias cat='bat'
+if type -q bat
+  alias cat='bat'
+else if type -q batcat
+  alias cat='batcat'
+end
 alias ls='lsd'
 alias ping='prettyping --nolegend'
