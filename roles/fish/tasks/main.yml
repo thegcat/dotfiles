@@ -20,6 +20,7 @@
 
 - name: Make fish the login shell
   shell: "chsh -s {{ fish_executable.stdout }}"
+  if: lookup('env', 'SHELL') != fish_executable.stdout
 
 - name: Get Oh-My-Fish
   git:
