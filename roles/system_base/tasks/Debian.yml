@@ -2,16 +2,30 @@
 - name: Install CLI Apps
   package:
     name:
-      - ack
       - ansible
+      - bat
       - curl
+      - fd-find
       - htop
+      - httpie
+      - jq
       - lftp
       - mmv
       - p7zip-full
       - p7zip-rar
       - parallel
+      - prettyping
+      - progress
+      - ripgrep
+      - sshuttle
       - tree
-      - youtube-dl
+      - yamllint
     state: present
   become: yes
+
+- name: Install some more dependencies
+  npm:
+    name: fx
+    state: latest
+    global: true
+  become: true
