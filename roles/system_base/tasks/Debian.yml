@@ -21,7 +21,7 @@
       - tree
       - yamllint
     state: present
-  become: yes
+  become: true
 
 - name: Install some more dependencies
   npm:
