@@ -1,4 +1,10 @@
 ---
+- name: Add fish PPA
+  apt_repository:
+    repo: ppa:fish-shell/release-3
+    state: present
+  become: true
+
 - name: Install fish and dependencies
   package:
     name:
