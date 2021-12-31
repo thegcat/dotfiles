@@ -5,3 +5,10 @@
       - git
       - direnv
     state: latest
+
+- name: Configure fish
+  copy:
+    src: "{{ item.src }}"
+    dest: "{{ item.dest }}"
+  with_items:
+    - { src: homebrew.fish, dest: ~/.config/fish/conf.d/homebrew.fish }
