@@ -8,7 +8,7 @@
 
 - name: Get fish executable
   command: which fish
-  check_mode: no
+  check_mode: false
   register: fish_executable
 
 - name: Enable using fish as login shell
@@ -16,7 +16,7 @@
     path: /etc/shells
     line: "{{ fish_executable.stdout }}"
     insertafter: EOF
-  become: yes
+  become: true
 
 - name: Make fish the login shell
   shell: "chsh -s {{ fish_executable.stdout }}"
