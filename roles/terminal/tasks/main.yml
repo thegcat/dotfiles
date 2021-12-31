@@ -6,8 +6,8 @@
     depth: 1
   register: tomorrow_git
   with_items:
-    - { repo: martinlindhe/base16-iterm2, dest: ~/Code/thegcat/base16-iterm2 }
-    - { repo: chriskempson/base16-shell, dest: ~/.config/base16-shell }
+    - {repo: martinlindhe/base16-iterm2, dest: ~/Code/thegcat/base16-iterm2}
+    - {repo: chriskempson/base16-shell, dest: ~/.config/base16-shell}
 
 - name: Instal terminal dependencies
   include: "{{ item }}"
@@ -36,14 +36,14 @@
     src: "{{ item.src }}"
     dest: "{{ item.dest }}"
   with_items:
-    - { src: tmux.conf.j2, dest: ~/.tmux.conf }
+    - {src: tmux.conf.j2, dest: ~/.tmux.conf}
 
 - name: Configure tmux with powerline and fish and tpm
   copy:
     src: "{{ item.src }}"
     dest: "{{ item.dest }}"
   with_items:
-    - { src: powerline_themes_tmux_default.json, dest: ~/.config/powerline/themes/tmux/default.json }
-    - { src: powerline_themes_shell_default.json, dest: ~/.config/powerline/themes/shell/default.json }
-    - { src: powerline_colorschemes_default.json, dest: ~/.config/powerline/colorschemes/default.json }
-    - { src: powerline_colors.json, dest: ~/.config/powerline/colors.json }
+    - {src: powerline_themes_tmux_default.json, dest: ~/.config/powerline/themes/tmux/default.json}
+    - {src: powerline_themes_shell_default.json, dest: ~/.config/powerline/themes/shell/default.json}
+    - {src: powerline_colorschemes_default.json, dest: ~/.config/powerline/colorschemes/default.json}
+    - {src: powerline_colors.json, dest: ~/.config/powerline/colors.json}
