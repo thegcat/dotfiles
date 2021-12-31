@@ -6,11 +6,11 @@
   hosts: local
   roles:
     - { role: package_manager, tags: ['bootstrap'] }
+    - terminal
     - fish
     - vim
     - system_base
     - ssh
-    - terminal
     - git
     - ruby
     - fsinfo

@@ -24,7 +24,11 @@
 - name: Get Powerline install directory
   shell: "pip3 show powerline-status | awk '/^Location: / {print $2}'"
   check_mode: false
-  register: powerline_dir
+  register: powerline_location
+
+- name: Set Powerline install directory fact
+  set_fact:
+    powerline_dir: "{{ powerline_location.stdout }}"
 
 - name: Make sure needed directories are present
   file:

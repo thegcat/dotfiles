@@ -4,7 +4,7 @@ if status --is-interactive
 end
 
 # Use powerline for the prompt
-set fish_function_path $fish_function_path "/opt/homebrew/lib/python3.9/site-packages/powerline/bindings/fish"
+set fish_function_path $fish_function_path "{{ powerline_dir }}/powerline/bindings/fish"
 powerline-setup
 
 function _powerline_set_columns --on-signal WINCH
