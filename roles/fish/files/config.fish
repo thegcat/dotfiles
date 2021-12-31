@@ -9,5 +9,7 @@ if type -q bat
 else if type -q batcat
   alias cat='batcat'
 end
-alias ls='lsd'
+if type -q lsd
+  alias ls='lsd'
+end
 alias ping='prettyping --nolegend'
