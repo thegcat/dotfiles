@@ -32,8 +32,12 @@
 
 - name: Make sure needed directories are present
   file:
-    path: ~/.config/powerline/themes/tmux
+    path: "~/.config/powerline/{{ item }}"
     state: directory
+  loop:
+    - themes/tmux
+    - themes/shell
+    - colorschemes
 
 - name: Configure tmux with powerline and fish and tpm
   template:
