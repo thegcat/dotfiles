@@ -158,7 +158,7 @@
     - mactex-no-gui
     - mumble
     - netnewswire
-    # - nextcloud # not M1 compatible yet
+    - nextcloud
     - onyx
     - paparazzi
     - pg-commander
