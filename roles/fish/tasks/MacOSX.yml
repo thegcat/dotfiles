@@ -18,7 +18,7 @@
 - name: Install some Oh-My-Fish plugins  # noqa command-instead-of-shell
   shell: omf install "{{ item }}"
   args:
-    executable: "{{ fish_executable.stdout }}"
+    executable: fish
     creates: "~/.local/share/omf/pkg/{{ item | urlsplit('path') | basename | splitext | first }}"
   with_items:
     - brew
