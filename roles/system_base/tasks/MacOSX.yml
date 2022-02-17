@@ -1,11 +1,11 @@
 ---
 - name: Get base defaults config
   command: defaults -currentHost read -g
-  register: currentHost_defaults
-  changed_when: currentHost_defaults.rc != 0
+  register: current_host_defaults
+  changed_when: current_host_defaults.rc != 0
 
 - name: Remap CapsLock to Escape (internal keyboard)
-  when: not "    \"com.apple.keyboard.modifiermapping.1452-632-0\" =     (\n                {\n            HIDKeyboardModifierMappingDst = 30064771113;\n            HIDKeyboardModifierMappingSrc = 30064771129;\n        }\n    );" in currentHost_defaults.stdout
+  when: not "    \"com.apple.keyboard.modifiermapping.1452-632-0\" =     (\n                {\n            HIDKeyboardModifierMappingDst = 30064771113;\n            HIDKeyboardModifierMappingSrc = 30064771129;\n        }\n    );" in current_host_defaults.stdout
   osx_defaults:
     host: currentHost
     key: com.apple.keyboard.modifiermapping.1452-632-0
@@ -15,7 +15,7 @@
       - '<dict><key>HIDKeyboardModifierMappingDst</key><integer>30064771113</integer><key>HIDKeyboardModifierMappingSrc</key><integer>30064771129</integer></dict>'
 
 - name: Remap CapsLock to Escape (wireless keyboard)
-  when: not "    \"com.apple.keyboard.modifiermapping.alt_handler_id-50\" =     (\n                {\n            HIDKeyboardModifierMappingDst = 30064771113;\n            HIDKeyboardModifierMappingSrc = 30064771129;\n        }\n    );" in currentHost_defaults.stdout
+  when: not "    \"com.apple.keyboard.modifiermapping.alt_handler_id-50\" =     (\n                {\n            HIDKeyboardModifierMappingDst = 30064771113;\n            HIDKeyboardModifierMappingSrc = 30064771129;\n        }\n    );" in current_host_defaults.stdout
   osx_defaults:
     host: currentHost
     key: com.apple.keyboard.modifiermapping.alt_handler_id-50
@@ -25,7 +25,7 @@
       - '<dict><key>HIDKeyboardModifierMappingDst</key><integer>30064771113</integer><key>HIDKeyboardModifierMappingSrc</key><integer>30064771129</integer></dict>'
 
 - name: Remap CapsLock to Escape (wireless keyboard)
-  when: not "    \"com.apple.keyboard.modifiermapping.alt_handler_id-83\" =     (\n                {\n            HIDKeyboardModifierMappingDst = 30064771113;\n            HIDKeyboardModifierMappingSrc = 30064771129;\n        }\n    );" in currentHost_defaults.stdout
+  when: not "    \"com.apple.keyboard.modifiermapping.alt_handler_id-83\" =     (\n                {\n            HIDKeyboardModifierMappingDst = 30064771113;\n            HIDKeyboardModifierMappingSrc = 30064771129;\n        }\n    );" in current_host_defaults.stdout
   osx_defaults:
     host: currentHost
     key: com.apple.keyboard.modifiermapping.alt_handler_id-83
@@ -203,7 +203,7 @@
     - 545519333  # Amazon Prime Video
     - 1591051659  # Screegle
     - 1591303229  # Vinegar
-  when: "'{{ item }}' not in mas_list.stdout"
+  when: item not in mas_list.stdout
 
 - name: Check if any App Store Apps are outdated
   command: mas outdated
@@ -212,4 +212,4 @@
 
 - name: Upgrade all App Store Apps
   command: mas upgrade
-  when: mas_outdated.stdout != ""
+  when: mas_outdated.stdout | length == 0

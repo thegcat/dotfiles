@@ -16,3 +16,4 @@
       Host irb
         Hostname plutonium.cs.tu-dortmund.de
         User schaef00
+    mode: 0644

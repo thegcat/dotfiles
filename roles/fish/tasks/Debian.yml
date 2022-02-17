@@ -5,7 +5,7 @@
     state: present
   become: true
 
-- name: Install fish and dependencies
+- name: Install fish and dependencies  # noqa package-latest
   package:
     name:
       - fish

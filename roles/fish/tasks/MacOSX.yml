@@ -1,5 +1,5 @@
 ---
-- name: Install fish with homebrew
+- name: Install fish with homebrew  # noqa package-latest
   homebrew:
     name:
       - fish
@@ -11,13 +11,15 @@
   copy:
     src: "{{ item.src }}"
     dest: "{{ item.dest }}"
+    mode: 0644
   with_items:
     - {src: homebrew.fish, dest: ~/.config/fish/conf.d/homebrew.fish}
 
-- name: Install some Oh-My-Fish plugins
+- name: Install some Oh-My-Fish plugins  # noqa command-instead-of-shell
   shell: omf install "{{ item }}"
   args:
     executable: "{{ fish_executable.stdout }}"
+    creates: "~/.local/share/omf/pkg/{{ item | urlsplit('path') | basename | splitext | first }}"
   with_items:
     - brew
     - https://github.com/thegcat/caffeinate.git

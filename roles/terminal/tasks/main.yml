@@ -4,6 +4,7 @@
     repo: https://github.com/{{ item.repo }}.git
     dest: "{{ item.dest }}"
     depth: 1
+    version: master
   register: tomorrow_git
   with_items:
     - {repo: martinlindhe/base16-iterm2, dest: ~/Code/thegcat/base16-iterm2}
@@ -22,9 +23,12 @@
     executable: pip3
 
 - name: Get Powerline install directory
-  shell: "pip3 show powerline-status | awk '/^Location: / {print $2}'"
+  shell: |
+    set -e -o pipefail
+    pip3 show powerline-status | awk '/^Location: / {print $2}'
   check_mode: false
   register: powerline_location
+  changed_when: powerline_location.rc != 0
 
 - name: Set Powerline install directory fact
   set_fact:
@@ -34,6 +38,7 @@
   file:
     path: "{{ item }}"
     state: directory
+    mode: 0755
   loop:
     - ~/.config/powerline/themes/tmux
     - ~/.config/powerline/themes/shell
@@ -44,6 +49,7 @@
   template:
     src: "{{ item.src }}"
     dest: "{{ item.dest }}"
+    mode: 0755
   with_items:
     - {src: tmux.conf.j2, dest: ~/.tmux.conf}
 
@@ -51,6 +57,7 @@
   copy:
     src: "{{ item.src }}"
     dest: "{{ item.dest }}"
+    mode: 0755
   with_items:
     - {src: powerline_themes_tmux_default.json, dest: ~/.config/powerline/themes/tmux/default.json}
     - {src: powerline_themes_shell_default.json, dest: ~/.config/powerline/themes/shell/default.json}

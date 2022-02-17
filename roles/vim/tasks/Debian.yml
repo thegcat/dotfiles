@@ -1,12 +1,12 @@
 ---
-- name: Install vim and dependencies
+- name: Install vim and dependencies  # noqa package-latest
   package:
     name:
       - vim
     state: latest
   become: true
 
-- name: Install some more dependencies
+- name: Install some more dependencies  # noqa package-latest
   npm:
     name: markdownlint-cli
     state: latest

@@ -1,5 +1,5 @@
 ---
-- name: Install rbenv
+- name: Install rbenv  # noqa package-latest
   package:
     name:
       - rbenv

@@ -10,6 +10,7 @@
   command: which fish
   check_mode: false
   register: fish_executable
+  changed_when: fish_executable.rc != 0
 
 - name: Enable using fish as login shell
   lineinfile:
@@ -19,7 +20,7 @@
   become: true
 
 - name: Make fish the login shell
-  shell: "chsh -s {{ fish_executable.stdout }}"
+  command: "chsh -s {{ fish_executable.stdout }}"
   when: lookup('env', 'SHELL') != fish_executable.stdout
 
 - name: Get Oh-My-Fish
@@ -27,17 +28,20 @@
     repo: https://github.com/oh-my-fish/oh-my-fish
     dest: ~/Code/thegcat/oh-my-fish
     depth: 1
+    version: master
   register: omf_git
 
 - name: Create required directories
   file:
     path: ~/.config/fish/functions
     state: directory
+    mode: 0755
 
 - name: Configure fish
   copy:
     src: "{{ item.src }}"
     dest: "{{ item.dest }}"
+    mode: 0644
   with_items:
     - {src: config.fish, dest: ~/.config/fish/config.fish}
     - {src: functions_fish_user_key_bindings.fish, dest: ~/.config/fish/functions/fish_user_key_bindings.fish}
@@ -47,16 +51,18 @@
   template:
     src: "{{ item.src }}.j2"
     dest: "{{ item.dest }}"
+    mode: 0644
   with_items:
     - {src: theme.fish, dest: ~/.config/fish/conf.d/theme.fish}
 
-- name: Install Oh-My-Fish
+- name: Install Oh-My-Fish  # noqa no-handler
   command: ~/Code/thegcat/oh-my-fish/bin/install --offline --noninteractive --yes
   when: omf_git.changed
 
-- name: Install some Oh-My-Fish plugins
+- name: Install some Oh-My-Fish plugins  # noqa command-instead-of-shell
   shell: omf install "{{ item }}"
   args:
     executable: "{{ fish_executable.stdout }}"
+    creates: "~/.local/share/omf/pkg/{{ item }}"
   with_items:
     - direnv

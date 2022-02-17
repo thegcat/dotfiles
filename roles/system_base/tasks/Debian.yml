@@ -23,7 +23,7 @@
     state: present
   become: true
 
-- name: Install some more dependencies
+- name: Install some more dependencies  # noqa package-latest
   npm:
     name: fx
     state: latest

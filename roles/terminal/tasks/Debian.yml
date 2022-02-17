@@ -1,5 +1,5 @@
 ---
-- name: Install terminal dependencies
+- name: Install terminal dependencies  # noqa package-latest
   package:
     name:
       - tmux

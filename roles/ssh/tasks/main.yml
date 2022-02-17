@@ -14,3 +14,4 @@
       Compression yes
 
       Include conf.d/*
+    mode: 0644

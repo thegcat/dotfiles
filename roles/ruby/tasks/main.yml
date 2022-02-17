@@ -6,10 +6,11 @@
     - "{{ ansible_distribution }}.yml"
     - "{{ ansible_os_family }}.yml"
 
-- name: Install some Oh-My-Fish plugins
+- name: Install some Oh-My-Fish plugins  # noqa command-instead-of-shell
   shell: omf install "{{ item }}"
   args:
     executable: "{{ fish_executable.stdout }}"
+    creates: "~/.local/share/omf/pkg/{{ item }}"
   with_items:
     - bundler
     - gem
@@ -20,6 +21,7 @@
     dest: ~/.gemrc
     content: |
       gem: --no-document --no-ri --no-rdoc
+    mode: 0644
 
 - name: install a sensible bundle config
   copy:
@@ -29,9 +31,11 @@
       BUNDLE_JOBS: "8"
       BUNDLE_BUILD__LIBV8: "--with-system-v8 --with-v8-dir=/opt/homebrew/opt/v8@3.15/"
       BUNDLE_BUILD__THERUBYRACER: "--with-system-v8 --with-v8-dir=/opt/homebrew/opt/v8@3.15/"
+    mode: 0644
 
 - name: set some defaults for rbenv installation
   copy:
     dest: ~/.config/fish/conf.d/ruby-build.fish
     content: |
       set -agx RUBY_CONFIGURE_OPTS --disable-install-doc
+    mode: 0644

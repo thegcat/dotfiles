@@ -1,5 +1,5 @@
 ---
-- name: Install git
+- name: Install git  # noqa package-latest
   homebrew:
     name:
       - git

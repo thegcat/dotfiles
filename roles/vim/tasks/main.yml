@@ -10,12 +10,14 @@
   copy:
     src: vimrc
     dest: ~/.vimrc
+    mode: 0644
 
 - name: Install some vim plugins
   git:
     repo: https://github.com/{{ item.repo }}.git
     dest: ~/.vim/bundle/{{ item.dest }}
     depth: 1
+    version: master
   with_items:
     - {repo: tpope/vim-pathogen, dest: vim-pathogen}
     - {repo: tpope/vim-sensible, dest: vim-sensible}
@@ -42,8 +44,10 @@
   file:
     path: ~/.config/powerline/themes/vim
     state: directory
+    mode: 0755
 
 - name: Configure powerline for vim
   copy:
     src: powerline_themes_vim_default.json
     dest: ~/.config/powerline/themes/vim/default.json
+    mode: 0644

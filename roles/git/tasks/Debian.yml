@@ -1,5 +1,5 @@
 ---
-- name: Install git and dependencies
+- name: Install git and dependencies  # noqa package-latest
   package:
     name:
       - git

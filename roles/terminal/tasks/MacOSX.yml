@@ -5,7 +5,7 @@
       - iterm2
     state: upgraded
 
-- name: Install terminal dependencies
+- name: Install terminal dependencies  # noqa package-latest
   homebrew:
     name:
       - tmux
@@ -13,6 +13,6 @@
       - python
     state: latest
 
-- name: Install iTerm2 Tomorrow Night theme
+- name: Install iTerm2 Tomorrow Night theme  # noqa no-handler
   command: open '~/Code/thegcat/base16-iterm2/itermcolors/base16-tomorrow-night.itermcolors'
   when: tomorrow_git.results[0].changed

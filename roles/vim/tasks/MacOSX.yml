@@ -1,5 +1,5 @@
 ---
-- name: Install vim and some supporting software
+- name: Install vim and some supporting software  # noqa package-latest
   homebrew:
     name:
       - vim
