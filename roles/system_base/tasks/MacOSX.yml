@@ -203,7 +203,7 @@
     - 545519333  # Amazon Prime Video
     - 1591051659  # Screegle
     - 1591303229  # Vinegar
-  when: item not in mas_list.stdout
+  when: item|string not in mas_list.stdout
 
 - name: Check if any App Store Apps are outdated
   command: mas outdated
