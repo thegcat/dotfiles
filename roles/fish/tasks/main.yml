@@ -39,16 +39,16 @@
     src: "{{ item.src }}"
     dest: "{{ item.dest }}"
   with_items:
-    - { src: config.fish, dest: ~/.config/fish/config.fish }
-    - { src: functions_fish_user_key_bindings.fish, dest: ~/.config/fish/functions/fish_user_key_bindings.fish }
-    - { src: home-localbinpath.fish, dest: ~/.config/fish/conf.d/home-localbinpath.fish }
+    - {src: config.fish, dest: ~/.config/fish/config.fish}
+    - {src: functions_fish_user_key_bindings.fish, dest: ~/.config/fish/functions/fish_user_key_bindings.fish}
+    - {src: home-localbinpath.fish, dest: ~/.config/fish/conf.d/home-localbinpath.fish}
 
 - name: Configure fish
   template:
     src: "{{ item.src }}.j2"
     dest: "{{ item.dest }}"
   with_items:
-    - { src: theme.fish, dest: ~/.config/fish/conf.d/theme.fish }
+    - {src: theme.fish, dest: ~/.config/fish/conf.d/theme.fish}
 
 - name: Install Oh-My-Fish
   command: ~/Code/thegcat/oh-my-fish/bin/install --offline --noninteractive --yes

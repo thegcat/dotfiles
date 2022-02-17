@@ -1,8 +1,9 @@
+---
 - name: Create ssh key-pair for thegcat
   user:
     name: thegcat
-    createhome: no
-    generate_ssh_key: yes
+    createhome: false
+    generate_ssh_key: true
     ssh_key_type: ed25519
 
 - name: Add default config

@@ -1,3 +1,4 @@
+---
 - name: Add fsinfo ssh config
   copy:
     dest: ~/.ssh/conf.d/fsinfo.conf

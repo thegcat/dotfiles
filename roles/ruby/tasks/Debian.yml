@@ -5,4 +5,4 @@
       - rbenv
       - ruby-build
     state: latest
-  become: yes
+  become: true

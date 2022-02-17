@@ -4,4 +4,4 @@
     name:
       - git
     state: latest
-  become: yes
+  become: true

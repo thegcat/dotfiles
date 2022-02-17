@@ -12,4 +12,4 @@
     value: "{{ item.value }}"
     scope: global
   with_items:
-    - { key: credential.helper, value: osxkeychain } # use macOS keychain to store credentials
+    - {key: credential.helper, value: osxkeychain}  # use macOS keychain to store credentials

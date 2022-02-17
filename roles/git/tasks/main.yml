@@ -1,3 +1,4 @@
+---
 - name: Install git and dependencies
   include: "{{ item }}"
   with_first_found:
@@ -11,62 +12,62 @@
     value: "{{ item.value }}"
     scope: global
   with_items:
-    - { key: user.name, value: Felix Schäfer }
-    - { key: user.email, value: felix@thegcat.net }
-    - { key: core.editor, value: vim }
-    - { key: core.excludesfile, value: ~/.gitignore_global }
-    - { key: core.pager, value: delta }
-    - { key: interactive.diffFilter, value: delta --color-only --features=interactive }
-    - { key: delta.features, value: line-numbers }
-    - { key: delta.syntax-theme, value: base16-256 }
-    - { key: delta.navigate, value: true }
-    - { key: push.recurseSubmodules, value: on-demand }
-    - { key: push.default, value: upstream }
-    - { key: merge.ff, value: only }
-    - { key: merge.autostash, value: true }
-    - { key: merge.conflictstyle, value: diff3 }
-    - { key: rebase.autostash, value: true }
-    - { key: status.showstash, value: true }
-    - { key: status.submodulesummary, value: true }
-    - { key: alias.s, value: status -sb }
-    - { key: alias.a, value: add -p }
-    - { key: alias.p, value: push }
-    - { key: alias.ci, value: commit }
-    - { key: alias.br, value: branch }
-    - { key: alias.co, value: checkout }
-    - { key: alias.cp, value: cherry-pick -e }
-    - { key: alias.df, value: diff }
-    - { key: alias.ds, value: diff --cached }
-    - { key: alias.dw, value: diff --color-words }
-    - { key: alias.re, value: rebase --autosquash }
-    - { key: alias.ri, value: rebase --interactive --autosquash }
-    - { key: alias.rc, value: rebase --continue }
-    - { key: alias.ra, value: rebase --abort }
-    - { key: alias.rcs, value: '!git rc; git s' }
-    - { key: alias.sa, value: submodule add }
-    - { key: alias.si, value: submodule init }
-    - { key: alias.su, value: submodule update }
-    - { key: alias.ss, value: submodule sync }
-    - { key: alias.fp, value: push --force-with-lease }
-    - { key: alias.us, value: reset HEAD }
-    - { key: alias.uc, value: reset --soft HEAD^ }
-    - { key: alias.tree, value: log --graph --pretty=onelineverbose --abbrev-commit }
-    - { key: alias.rv, value: remote --verbose }
-    - { key: pretty.onelineverbose, value: '%C(yellow)%h%Creset (%Cblue%aN%Creset)%Cred%d%Creset %s [%Cgreen%cd, %ad%Creset]' }
-    - { key: pull.rebase, value: true }
-    - { key: diff.compactionHeuristic, value: true }
-    - { key: diff.colorMoved, value: default }
-    - { key: core.whitespace, value: "-indent-with-non-tab,trailing-space,cr-at-eol" }
-    - { key: apply.whitespace, value: fix }
-    - { key: branch.autosetuprebase, value: always }
-    - { key: color.ui, value: auto }
-    - { key: format.pretty, value: "format:%C(yellow)%h %Cblue%>(12)%ad %Cgreen%<(7)%aN%Cred%d %Creset%s" }
-    - { key: log.date, value: relative }
-    - { key: init.defaultBranch, value: main }
-    - { key: checkout.workers, value: 0 }
-    - { key: fetch.parallel, value: 0 }
-    - { key: pack.threads, value: 0 }
-    - { key: submodule.fetchjobs, value: 0 }
+    - {key: user.name, value: Felix Schäfer}
+    - {key: user.email, value: felix@thegcat.net}
+    - {key: core.editor, value: vim}
+    - {key: core.excludesfile, value: ~/.gitignore_global}
+    - {key: core.pager, value: delta}
+    - {key: interactive.diffFilter, value: delta --color-only --features=interactive}
+    - {key: delta.features, value: line-numbers}
+    - {key: delta.syntax-theme, value: base16-256}
+    - {key: delta.navigate, value: true}
+    - {key: push.recurseSubmodules, value: on-demand}
+    - {key: push.default, value: upstream}
+    - {key: merge.ff, value: only}
+    - {key: merge.autostash, value: true}
+    - {key: merge.conflictstyle, value: diff3}
+    - {key: rebase.autostash, value: true}
+    - {key: status.showstash, value: true}
+    - {key: status.submodulesummary, value: true}
+    - {key: alias.s, value: status -sb}
+    - {key: alias.a, value: add -p}
+    - {key: alias.p, value: push}
+    - {key: alias.ci, value: commit}
+    - {key: alias.br, value: branch}
+    - {key: alias.co, value: checkout}
+    - {key: alias.cp, value: cherry-pick -e}
+    - {key: alias.df, value: diff}
+    - {key: alias.ds, value: diff --cached}
+    - {key: alias.dw, value: diff --color-words}
+    - {key: alias.re, value: rebase --autosquash}
+    - {key: alias.ri, value: rebase --interactive --autosquash}
+    - {key: alias.rc, value: rebase --continue}
+    - {key: alias.ra, value: rebase --abort}
+    - {key: alias.rcs, value: '!git rc; git s'}
+    - {key: alias.sa, value: submodule add}
+    - {key: alias.si, value: submodule init}
+    - {key: alias.su, value: submodule update}
+    - {key: alias.ss, value: submodule sync}
+    - {key: alias.fp, value: push --force-with-lease}
+    - {key: alias.us, value: reset HEAD}
+    - {key: alias.uc, value: reset --soft HEAD^}
+    - {key: alias.tree, value: log --graph --pretty=onelineverbose --abbrev-commit}
+    - {key: alias.rv, value: remote --verbose}
+    - {key: pretty.onelineverbose, value: '%C(yellow)%h%Creset (%Cblue%aN%Creset)%Cred%d%Creset %s [%Cgreen%cd, %ad%Creset]'}
+    - {key: pull.rebase, value: true}
+    - {key: diff.compactionHeuristic, value: true}
+    - {key: diff.colorMoved, value: default}
+    - {key: core.whitespace, value: "-indent-with-non-tab,trailing-space,cr-at-eol"}
+    - {key: apply.whitespace, value: fix}
+    - {key: branch.autosetuprebase, value: always}
+    - {key: color.ui, value: auto}
+    - {key: format.pretty, value: "format:%C(yellow)%h %Cblue%>(12)%ad %Cgreen%<(7)%aN%Cred%d %Creset%s"}
+    - {key: log.date, value: relative}
+    - {key: init.defaultBranch, value: main}
+    - {key: checkout.workers, value: 0}
+    - {key: fetch.parallel, value: 0}
+    - {key: pack.threads, value: 0}
+    - {key: submodule.fetchjobs, value: 0}
 
 - name: Install global gitignore
   copy:
