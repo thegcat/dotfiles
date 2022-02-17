@@ -5,6 +5,9 @@ set -g pane-base-index 1
 # Move with vi
 setw -g mode-keys vi
 
+# Any TERM that is -256color should get TrueColor
+set -ga terminal-overrides ",*256col*:Tc"
+
 # Change prefix from C-b to C-a (tmux-sensible takes care of the nitty-gritty)
 set -g prefix C-a
 
