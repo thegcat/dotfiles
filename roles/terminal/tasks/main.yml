@@ -26,6 +26,8 @@
   shell: |
     set -e -o pipefail
     pip3 show powerline-status | awk '/^Location: / {print $2}'
+  args:
+    executable: bash
   check_mode: false
   register: powerline_location
   changed_when: powerline_location.rc != 0
