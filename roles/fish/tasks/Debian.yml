@@ -4,6 +4,7 @@
     repo: ppa:fish-shell/release-3
     state: present
   become: true
+  when: ansible_distribution_release != "jammy"
 
 - name: Install fish and dependencies  # noqa package-latest
   package:
