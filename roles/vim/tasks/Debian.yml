@@ -3,6 +3,7 @@
   package:
     name:
       - vim
+      - npm
     state: latest
   become: true
 
@@ -11,3 +12,4 @@
     name: markdownlint-cli
     state: latest
     global: true
+  become: true
