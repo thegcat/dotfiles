@@ -12,6 +12,8 @@
     content: |
       Host *
       Compression yes
+      UseKeychain yes
+      AddKeysToAgent yes
 
       Include conf.d/*
     mode: 0644
