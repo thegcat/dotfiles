@@ -4,11 +4,11 @@
     repo: https://github.com/{{ item.repo }}.git
     dest: "{{ item.dest }}"
     depth: 1
-    version: master
+    version: "{{ item.version }}"
   register: tomorrow_git
   with_items:
-    - {repo: martinlindhe/base16-iterm2, dest: ~/Code/thegcat/base16-iterm2}
-    - {repo: chriskempson/base16-shell, dest: ~/.config/base16-shell}
+    - {repo: martinlindhe/base16-iterm2, dest: ~/Code/thegcat/base16-iterm2, version: main}
+    - {repo: chriskempson/base16-shell, dest: ~/.config/base16-shell, version: master}
 
 - name: Instal terminal dependencies
   include: "{{ item }}"
