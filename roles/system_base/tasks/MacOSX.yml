@@ -45,6 +45,7 @@
   with_items:
     - {domain: NSGlobalDomain, key: AppleInterfaceTheme, type: string, value: Dark}  # dark theme
     - {domain: NSGlobalDomain, key: AppleKeyboardUIMode, type: integer, value: 3}  # enable tabs in dialogs
+    - {domain: NSGlobalDomain, key: AppleShowAllExtensions, type: boolean, value: true}  # Always show file extensions
     - {domain: NSGlobalDomain, key: com.apple.trackpad.scaling, type: integer, value: 2}  # faster trackpad
     - {domain: NSGlobalDomain, key: PMPrintingExpandedStateForPrint, type: boolean, value: true}  # show extended print panel
     - {domain: NSGlobalDomain, key: com.apple.mouse.tapBehavior, type: integer, value: 1}  # tap to click
