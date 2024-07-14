@@ -40,6 +40,7 @@
     - {repo: dag/vim-fish, dest: vim-fish}
     - {repo: pearofducks/ansible-vim, dest: ansible-vim}
     - {repo: digitaltoad/vim-pug, dest: vim-pug}
+    - {repo: chrisbra/csv.vim, dest: csv}
 
 - name: Create necessary folders
   file:
