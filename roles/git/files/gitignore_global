@@ -1,5 +1,9 @@
-# Created by https://www.toptal.com/developers/gitignore/api/osx,vim,linux
-# Edit at https://www.toptal.com/developers/gitignore?templates=osx,vim,linux
+# Created by https://www.toptal.com/developers/gitignore/api/osx,vim,linux,direnv
+# Edit at https://www.toptal.com/developers/gitignore?templates=osx,vim,linux,direnv
+
+### direnv ###
+.direnv
+.envrc
 
 ### Linux ###
 *~
@@ -24,6 +28,7 @@
 
 # Icon must end with two \r
 Icon
+
 
 # Thumbnails
 ._*
@@ -64,4 +69,4 @@ tags
 # Persistent undo
 [._]*.un~
 
-# End of https://www.toptal.com/developers/gitignore/api/osx,vim,linux
+# End of https://www.toptal.com/developers/gitignore/api/osx,vim,linux,direnv
