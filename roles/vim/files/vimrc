@@ -81,6 +81,9 @@ let g:ctrlp_custom_ignore = {
   \ 'file': '\v\.(git|pyc|whl)$',
   \ }
 
+" csv
+let g:csv_autocmd_arrange = 1
+
 " ale
 let g:ale_sign_warning=''
 let g:ale_sign_error=''
