@@ -1,3 +1,7 @@
+" Do smart stuff based on filetype
+filetype plugin indent on
+
+" load pathogen and plugins
 runtime bundle/vim-pathogen/autoload/pathogen.vim
 execute pathogen#infect()
 
@@ -6,9 +10,6 @@ let mapleader = ","
 
 " Use syntax-highlighting
 syntax on
-
-" Do smart stuff based on filetype
-filetype plugin indent on
 
 " Show command being executed
 set showcmd
