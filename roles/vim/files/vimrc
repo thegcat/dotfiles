@@ -83,6 +83,8 @@ let g:ctrlp_custom_ignore = {
 " ale
 let g:ale_sign_warning=''
 let g:ale_sign_error=''
+let g:ale_virtualtext_prefix='  %type%: '
+let g:ale_virtualtext_column=120
 hi ALEErrorSign ctermfg=9 ctermbg=18
 nmap <silent> <C-n> <Plug>(ale_previous_wrap)
 nmap <silent> <C-m> <Plug>(ale_next_wrap)
