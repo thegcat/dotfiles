@@ -102,6 +102,9 @@ autocmd FileType plaintex setlocal textwidth=78
 autocmd FileType markdown setlocal textwidth=120
 autocmd FileType xml setlocal textwidth=78
 
+autocmd Filetype yaml.ansible setlocal colorcolumn=161
+autocmd Filetype yaml.ansible setlocal textwidth=160
+
 " use ripgrep in ack.vim
 if executable('rg')
   let g:ackprg = 'rg --vimgrep --smart-case'
