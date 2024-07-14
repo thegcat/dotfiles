@@ -88,6 +88,13 @@ let g:ale_virtualtext_column=120
 hi ALEErrorSign ctermfg=9 ctermbg=18
 nmap <silent> <C-n> <Plug>(ale_previous_wrap)
 nmap <silent> <C-m> <Plug>(ale_next_wrap)
+let g:ale_linters_ignore = {
+  \ 'ansible': ['yamllint'],
+  \ 'yaml.ansible': ['yamllint'],
+  \ 'tex': ['lacheck'],
+  \ }
+let g:ale_cspell_options = '--locale de,en'
+let g:ale_markdown_markdownlint_executable = 'markdownlint-cli2'
 
 " Set 78 char width for textfiles
 autocmd FileType text setlocal textwidth=78
