@@ -109,6 +109,8 @@ autocmd Filetype yaml.ansible setlocal textwidth=160
 if executable('rg')
   let g:ackprg = 'rg --vimgrep --smart-case'
 endif
+let g:ack_autoclose = 1
+let g:ack_use_cword_for_empty_search = 1
 " don't jump to the first result
 cnoreabbrev Ack Ack!
 nnoremap <Leader>a :Ack!<Space>
