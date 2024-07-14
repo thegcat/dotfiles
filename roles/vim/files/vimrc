@@ -99,7 +99,7 @@ let g:ale_markdown_markdownlint_executable = 'markdownlint-cli2'
 " Set 78 char width for textfiles
 autocmd FileType text setlocal textwidth=78
 autocmd FileType plaintex setlocal textwidth=78
-autocmd FileType markdown setlocal textwidth=78
+autocmd FileType markdown setlocal textwidth=120
 autocmd FileType xml setlocal textwidth=78
 
 " use ripgrep in ack.vim
